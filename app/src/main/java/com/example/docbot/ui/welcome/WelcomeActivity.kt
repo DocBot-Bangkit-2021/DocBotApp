@@ -22,7 +22,7 @@ class WelcomeActivity : AppCompatActivity() {
         binding.tvTitle.text = getString(R.string.intro_title_1)
         binding.description.text = getString(R.string.welcome_1)
 
-        var dummyImage : List<Int> = listOf(R.drawable.welcome_1, R.drawable.welcome_2, R.drawable.welcome_3)
+        val dummyImage : List<Int> = listOf(R.drawable.welcome_1, R.drawable.welcome_2, R.drawable.welcome_3)
 
         val adapter = SectionPagerAdapter(this, dummyImage)
         binding.viewPager.adapter = adapter
@@ -41,8 +41,6 @@ class WelcomeActivity : AppCompatActivity() {
             if(position < dummyImage.size){
                 position ++
                 binding.viewPager.currentItem = position
-            }
-            if (position == dummyImage.size - 1){
             }
         }
 
