@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">DocBot</string>
+
+    <string name="welcome_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aut distinctio ea expedita facere fugiat incidunt</string>
+    <string name="welcome_2">Description 2</string>
+    <string name="welcome_3">Description 3</string>
+    <string name="skip">Skip</string>
+    <string name="intro_title_1">Cek Gejala</string>
+    <string name="intro_title_2">Cek Gejala 2</string>
+    <string name="intro_title_3">Cek Gejala 3</string>
 </resources>
