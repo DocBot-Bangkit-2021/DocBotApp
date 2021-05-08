@@ -1,7 +1,10 @@
 package com.example.docbot.ui.welcome
 
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.viewpager.widget.ViewPager
 import com.example.docbot.R
 import com.example.docbot.databinding.ActivityWelcomeBinding
@@ -56,6 +59,16 @@ class WelcomeActivity : AppCompatActivity() {
             override fun onPageSelected(position: Int) {
                 binding.tvTitle.text = getString(titleWelcome[position])
                 binding.description.text  = getString(descWelcome[position])
+                if (position == dummyImage.size - 1){
+                    binding.btnLayout.visibility = View.GONE
+                    binding.tab.visibility = View.GONE
+                    binding.btnLogin.visibility = View.VISIBLE
+                }else{
+                    binding.btnLayout.visibility = View.VISIBLE
+                    binding.tab.visibility = View.VISIBLE
+                    binding.btnLogin.visibility = View.GONE
+                }
+//                Toast.makeText(this@WelcomeActivity, "$position", Toast.LENGTH_SHORT).show()
             }
 
             override fun onPageScrollStateChanged(state: Int) {

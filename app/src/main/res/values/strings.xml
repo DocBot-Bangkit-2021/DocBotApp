@@ -8,4 +8,5 @@
     <string name="intro_title_1">Cek Gejala</string>
     <string name="intro_title_2">Cek Gejala 2</string>
     <string name="intro_title_3">Cek Gejala 3</string>
+    <string name="login">Login</string>
 </resources>
