@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DocBot">
+        <activity android:name=".ui.loadingcek.LoadingCekActivity" />
         <activity
             android:name=".ui.splash.SplashScreenActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -18,9 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.home.MainActivity">
-
-        </activity>
+        <activity android:name=".ui.home.MainActivity" />
     </application>
 
 </manifest>

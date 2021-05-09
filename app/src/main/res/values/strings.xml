@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DocBot</string>
+    <string name="subtitle_loading_check">Kini kesembuhanmu menjadi lebih dekat.</string>
+    <string name="title_loading_check">Analisis Berhasil !</string>
+    <string name="hasil">Hasil</string>
+    <string name="kembali">Kembali</string>
 </resources>
