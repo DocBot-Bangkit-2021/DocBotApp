@@ -21,10 +21,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title_loading_check"
-        android:fontFamily="@font/nunito"
-        android:textSize="24sp"
         android:layout_marginTop="14dp"
+        android:fontFamily="@font/nunito"
+        android:text="@string/title_loading_check"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -33,34 +33,39 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/subtitle_loading_check"
-        android:fontFamily="@font/nunito_light"
         android:layout_marginTop="15dp"
+        android:fontFamily="@font/nunito_light"
+        android:text="@string/subtitle_loading_check"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/btn_hasil"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="@string/hasil"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_btn_blue"
         android:fontFamily="@font/nunito_light"
-        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:elevation="6dp"
+        android:text="@string/hasil"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <Button
-        android:id="@+id/button2"
+    <TextView
+        android:id="@+id/btn_kembali"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="@string/kembali"
-        android:fontFamily="@font/nunito_light"
-        android:textColor="@color/black"
+        android:layout_height="30dp"
         android:layout_marginTop="14dp"
-        android:background="@drawable/bg_btn_blue"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        android:background="@drawable/bg_btn_white"
+        android:fontFamily="@font/nunito_light"
+        android:gravity="center"
+        android:elevation="6dp"
+        android:text="@string/kembali"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/btn_hasil"
+        app:layout_constraintStart_toStartOf="@+id/btn_hasil"
+        app:layout_constraintTop_toBottomOf="@+id/btn_hasil" />
 </androidx.constraintlayout.widget.ConstraintLayout>
