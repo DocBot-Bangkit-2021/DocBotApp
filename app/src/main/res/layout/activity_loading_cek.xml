@@ -50,6 +50,7 @@
         android:gravity="center"
         android:elevation="6dp"
         android:text="@string/hasil"
+        android:textColor="@color/app_white"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -64,7 +65,7 @@
         android:gravity="center"
         android:elevation="6dp"
         android:text="@string/kembali"
-        android:textColor="@color/black"
+        android:textColor="@color/app_blue"
         app:layout_constraintEnd_toEndOf="@+id/btn_hasil"
         app:layout_constraintStart_toStartOf="@+id/btn_hasil"
         app:layout_constraintTop_toBottomOf="@+id/btn_hasil" />

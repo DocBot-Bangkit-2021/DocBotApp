@@ -4,4 +4,24 @@
     <string name="title_loading_check">Analisis Berhasil !</string>
     <string name="hasil">Hasil</string>
     <string name="kembali">Kembali</string>
+    <string name="no_tlp">No. Telp :</string>
+    <string name="email">Email :</string>
+    <string name="address">Alamat :</string>
+    <string name="informasi_kesehatan">Informasi Kesehatan</string>
+    <string name="age">Umur :</string>
+    <string name="weight">Berat Badan :</string>
+    <string name="height">Tinggi Badan :</string>
+    <string name="health_record">Riwayat Penyakit :</string>
+    <string name="allergy">Alergi :</string>
+    <string name="btn_account_result">TRANSAKSI SEBELUMNYA</string>
+    <string name="et_title_name">Nama</string>
+    <string name="et_title_tlp">No. Tlp</string>
+    <string name="code_tlp">+62</string>
+    <string name="et_title_email">Email</string>
+    <string name="et_tittle_address">Alamat</string>
+    <string name="et_title_age">Umur</string>
+    <string name="et_title_weight">Berat Badan</string>
+    <string name="et_title_height">Tinggi Badan</string>
+    <string name="et_title_health_record">Riwayat Penyakit</string>
+    <string name="et_title_allergy">Alergi</string>
 </resources>
