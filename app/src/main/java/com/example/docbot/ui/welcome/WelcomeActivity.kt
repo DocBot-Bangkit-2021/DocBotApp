@@ -35,7 +35,7 @@ class WelcomeActivity : AppCompatActivity() {
         val titleWelcome = intArrayOf (
                 R.string.intro_title_1,
                 R.string.intro_title_2,
-                R.string.intro_title_3
+                R.string.intro_title_3,
         )
         val descWelcome = intArrayOf(R.string.welcome_1, R.string.welcome_2, R.string.welcome_3)
 

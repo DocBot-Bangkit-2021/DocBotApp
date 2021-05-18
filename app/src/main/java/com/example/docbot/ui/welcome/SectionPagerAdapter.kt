@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -17,12 +16,12 @@ class SectionPagerAdapter(private val mContext: Context, private var ls: List<In
 
     override fun getCount(): Int = ls.size
 
-    override fun isViewFromObject(view: View, `object`: Any): Boolean = view.equals(`object`)
+    override fun isViewFromObject(view: View, `object`: Any): Boolean = view == `object`
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         layoutInflater = LayoutInflater.from(mContext)
-        var view: View = layoutInflater.inflate(R.layout.activity_welcome, container, false)
-        var img = view.findViewById<ImageView>(R.id.img_welcome)
+        val view: View = layoutInflater.inflate(R.layout.activity_welcome, container, false)
+        val img = view.findViewById<ImageView>(R.id.img_welcome)
         Glide.with(view)
                 .load(ls[position])
                 .apply(RequestOptions())
