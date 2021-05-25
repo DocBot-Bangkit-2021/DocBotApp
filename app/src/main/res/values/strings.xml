@@ -24,4 +24,18 @@
     <string name="et_title_height">Tinggi Badan</string>
     <string name="et_title_health_record">Riwayat Penyakit</string>
     <string name="et_title_allergy">Alergi</string>
+
+    <string name="location">Lokasi</string>
+    <string name="dummyLocation">Jakarta</string>
+    <string name="dashboardAsk">Bagaimana kondisimu hari ini?</string>
+    <string name="service">Layanan DocBot</string>
+    <string name="check">Cek Gejala</string>
+    <string name="news">Baca Informasi Kesehatan</string>
+    <string name="viewAll">View All</string>
+
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="infoContact">Info Kontak Puskesmas Terdekat</string>
+
 </resources>
