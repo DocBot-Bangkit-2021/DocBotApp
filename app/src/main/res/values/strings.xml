@@ -29,7 +29,8 @@
     <string name="dummyLocation">Jakarta</string>
     <string name="dashboardAsk">Bagaimana kondisimu hari ini?</string>
     <string name="service">Layanan DocBot</string>
-    <string name="check">Cek Gejala</string>
+    <string name="check">Cek Gejala Kulit</string>
+    <string name="check_cv19">Cek Gejala Covid</string>
     <string name="news">Baca Informasi Kesehatan</string>
     <string name="viewAll">View All</string>
 
