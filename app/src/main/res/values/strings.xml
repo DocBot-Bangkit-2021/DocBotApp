@@ -33,4 +33,38 @@
     <string name="intro_title_2">Cek Gejala 2</string>
     <string name="intro_title_3">Cek Gejala 3</string>
     <string name="login">Login</string>
+
+    <string name="location">Lokasi</string>
+    <string name="dummyLocation">Jakarta</string>
+    <string name="dashboardAsk">Bagaimana kondisimu hari ini?</string>
+    <string name="service">Layanan DocBot</string>
+    <string name="check">Cek Gejala Kulit</string>
+    <string name="check_cv19">Cek Gejala Covid</string>
+    <string name="news">Baca Informasi Kesehatan</string>
+    <string name="viewAll">View All</string>
+
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="infoContact">Info Kontak Puskesmas Terdekat</string>
+
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="question_gejala">Apa Gejala yang Dirasa?</string>
+    <string name="cek">Cek</string>
+
+    <string name="demam">Demam</string>
+    <string name="batuk">Batuk</string>
+    <string name="hidung">Hidung Berair</string>
+    <string name="nyeri">Nyeri Otot</string>
+    <string name="lelah">Kelelahan</string>
+    <string name="diare">Diare</string>
+    <string name="paru">Infeksi Paru</string>
+    <string name="jalan">Riwayat Perjalana</string>
+    <string name="isolasi">Perawatan Isolasi</string>
+
+    <string name="ambil">Ambil</string>
+    <string name="pilih">Pilih</string>
+
 </resources>
