@@ -1,10 +1,13 @@
 package com.example.docbot.ui.dashboard
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.docbot.databinding.ActivityDashboardBinding
+import com.example.docbot.ui.cekgejala.CheckActivity
+import com.example.docbot.ui.cekgejala.CheckCameraActivity
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -45,6 +48,13 @@ class DashboardActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@DashboardActivity, LinearLayoutManager.VERTICAL, false)
             setHasFixedSize(true)
             adapter = puskesmasAdapter
+        }
+
+        binding.button.setOnClickListener {
+            startActivity(Intent(this, CheckActivity::class.java))
+        }
+        binding.buttonCv19.setOnClickListener {
+            startActivity(Intent(this, CheckCameraActivity::class.java))
         }
     }
 }

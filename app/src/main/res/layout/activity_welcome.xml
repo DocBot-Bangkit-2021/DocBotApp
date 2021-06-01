@@ -66,13 +66,13 @@
             app:tabBackground="@drawable/indicator_selector" />
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_dashboard"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:theme="@style/button"
             android:layout_gravity="center"
             android:textColor="@color/black"
-            android:text="@string/login"
+            android:text="@string/dashboard"
             android:visibility="gone"/>
 
         <RelativeLayout

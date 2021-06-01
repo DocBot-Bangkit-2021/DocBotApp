@@ -116,7 +116,7 @@
         android:id="@+id/textView16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/nunito"
         android:text="@string/infoContact"
         android:textSize="16sp"

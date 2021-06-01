@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.docbot.R
 import com.example.docbot.databinding.ActivityCheckCameraBinding
+import com.example.docbot.ui.loadingcek.LoadingCekActivity
 
 class CheckCameraActivity : AppCompatActivity() {
 
@@ -35,7 +36,7 @@ class CheckCameraActivity : AppCompatActivity() {
         }
         binding.btnCek.setOnClickListener {
             if (status_photo){
-
+                startActivity(Intent(this, LoadingCekActivity::class.java))
             }
             else Toast.makeText(this, "Ambil gambar dulu", Toast.LENGTH_SHORT).show()
         }
@@ -47,7 +48,7 @@ class CheckCameraActivity : AppCompatActivity() {
         if(requestCode == CODE_CAMERA){
             if(resultCode == Activity.RESULT_OK){
                 val uri = data?.getStringExtra(CameraActivity.CEK_URI)
-                Toast.makeText(this, "$uri", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this, "$uri", Toast.LENGTH_SHORT).show()
                 Glide.with(this)
                         .load(uri)
                         .into(binding.imageView2)

@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.docbot">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DocBot">
         <activity android:name=".ui.cekgejala.CameraActivity"></activity>
-        <activity android:name=".ui.cekgejala.CheckCameraActivity">
+        <activity android:name=".ui.cekgejala.CheckCameraActivity"/>
         <activity android:name=".ui.account.FormAccountActivity"></activity>
         <activity android:name=".ui.account.AccountResultActivity" />
         <activity android:name=".ui.loadingcek.LoadingCekActivity" />
@@ -27,13 +31,6 @@
         </activity>
         <activity android:name=".ui.cekgejala.CheckActivity"></activity>
         <activity android:name=".ui.dashboard.DashboardActivity" />
-        <activity android:name=".ui.account.FormAccountActivity" />
-        <activity android:name=".ui.account.AccountResultActivity" />
-        <activity android:name=".ui.loadingcek.LoadingCekActivity" />
-        <activity
-            android:name=".ui.splash.SplashScreenActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".ui.home.MainActivity" />
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.example.docbot.ui.welcome
 
+import android.content.Intent
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.viewpager.widget.ViewPager
 import com.example.docbot.R
 import com.example.docbot.databinding.ActivityWelcomeBinding
+import com.example.docbot.ui.dashboard.DashboardActivity
 import com.google.android.material.tabs.TabLayout
 
 class WelcomeActivity : AppCompatActivity() {
@@ -47,6 +49,10 @@ class WelcomeActivity : AppCompatActivity() {
             }
         }
 
+        binding.btnDashboard.setOnClickListener {
+            startActivity(Intent(this, DashboardActivity::class.java))
+        }
+
         binding.viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
             override fun onPageScrolled(
                 position: Int,
@@ -62,11 +68,11 @@ class WelcomeActivity : AppCompatActivity() {
                 if (position == dummyImage.size - 1){
                     binding.btnLayout.visibility = View.GONE
                     binding.tab.visibility = View.GONE
-                    binding.btnLogin.visibility = View.VISIBLE
+                    binding.btnDashboard.visibility = View.VISIBLE
                 }else{
                     binding.btnLayout.visibility = View.VISIBLE
                     binding.tab.visibility = View.VISIBLE
-                    binding.btnLogin.visibility = View.GONE
+                    binding.btnDashboard.visibility = View.GONE
                 }
 //                Toast.makeText(this@WelcomeActivity, "$position", Toast.LENGTH_SHORT).show()
             }
