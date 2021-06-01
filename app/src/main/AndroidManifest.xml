@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.docbot">
 
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,22 +12,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DocBot">
-        <activity android:name=".ui.cekgejala.CheckActivity">
+        <activity android:name=".ui.cekgejala.CameraActivity"></activity>
+        <activity android:name=".ui.cekgejala.CheckCameraActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.dashboard.DashboardActivity">
-
-        </activity>
+        <activity android:name=".ui.cekgejala.CheckActivity"></activity>
+        <activity android:name=".ui.dashboard.DashboardActivity" />
         <activity android:name=".ui.account.FormAccountActivity" />
         <activity android:name=".ui.account.AccountResultActivity" />
         <activity android:name=".ui.loadingcek.LoadingCekActivity" />
         <activity
             android:name=".ui.splash.SplashScreenActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".ui.home.MainActivity" />
     </application>
 
