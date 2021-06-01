@@ -9,21 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DocBot">
-        <activity android:name=".ui.dashboard.DashboardActivity">
+        <activity android:name=".ui.cekgejala.CheckActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.dashboard.DashboardActivity">
+
+        </activity>
         <activity android:name=".ui.account.FormAccountActivity" />
         <activity android:name=".ui.account.AccountResultActivity" />
         <activity android:name=".ui.loadingcek.LoadingCekActivity" />
         <activity
             android:name=".ui.splash.SplashScreenActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
         <activity android:name=".ui.home.MainActivity" />
     </application>
 
