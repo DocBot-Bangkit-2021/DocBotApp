@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "69714341392",
+    "project_id": "light-maker-312601",
+    "storage_bucket": "light-maker-312601.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69714341392:android:c4e4d3fc516697203f6495",
+        "android_client_info": {
+          "package_name": "com.example.docbot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69714341392-6rao51c2d90cdol5fctg78k01bk21020.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.docbot",
+            "certificate_hash": "ea94560770e3fdd24460b6a93c561cad7ca48fae"
+          }
+        },
+        {
+          "client_id": "69714341392-l8pn4kb4bquegnqig8jgn44l5hlmn6ri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgQAg9tSfpFndDcvotwC1fX7OmsbKs5Kg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "69714341392-l8pn4kb4bquegnqig8jgn44l5hlmn6ri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
