@@ -2,29 +2,42 @@ package com.example.docbot.ui.cekgejala
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.ImageDecoder
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.docbot.R
 import com.example.docbot.databinding.ActivityCheckCameraBinding
+import com.example.docbot.ml.MobilenetV110224Quant
+import com.example.docbot.ui.hasil.ResultActivity
 import com.example.docbot.ui.loadingcek.LoadingCekActivity
+import org.tensorflow.lite.DataType
+import org.tensorflow.lite.support.image.TensorImage
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 
 class CheckCameraActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCheckCameraBinding
 
-    companion object {
-        const val CODE_CAMERA = 1
-        const val CODE_GALLERY = 2
-    }
+    private lateinit var bitmap: Bitmap
 
     private var status_photo = false
+
+    private var photo : String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCheckCameraBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val filename = "label.txt"
+        val inputString = application.assets.open(filename).bufferedReader().use { it.readText() }
+        val list = inputString.split("\n")
 
         binding.btnAmbil.setOnClickListener {
             startActivityForResult(Intent(this, CameraActivity::class.java), CODE_CAMERA)
@@ -36,7 +49,37 @@ class CheckCameraActivity : AppCompatActivity() {
         }
         binding.btnCek.setOnClickListener {
             if (status_photo){
-                startActivity(Intent(this, LoadingCekActivity::class.java))
+                val resized : Bitmap = Bitmap.createScaledBitmap(bitmap, 224, 224, true)
+                val model = MobilenetV110224Quant.newInstance(this)
+
+                // Creates inputs for reference.
+                val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.UINT8)
+
+                val tBuffer = TensorImage.fromBitmap(resized)
+                val byteBuffer = tBuffer.buffer
+//                Log.d("AJG", "$resized")
+
+                inputFeature0.loadBuffer(byteBuffer)
+
+                // Runs model inference and gets result.
+                val outputs = model.process(inputFeature0)
+                val outputFeature0 = outputs.outputFeature0AsTensorBuffer
+
+                val max = getMax(outputFeature0.floatArray)
+
+                binding.tvTes.text =  list[max]
+
+                val name = list[max]
+
+                // Releases model resources if no longer used.
+                model.close()
+
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra(ResultActivity.EXTRA_NAME, name)
+                intent.putExtra(ResultActivity.EXTRA_IMAGE, photo)
+                intent.putExtra(ResultActivity.EXTRA_VIT, "vitamin C")
+                startActivity(intent)
+
             }
             else Toast.makeText(this, "Ambil gambar dulu", Toast.LENGTH_SHORT).show()
         }
@@ -59,6 +102,29 @@ class CheckCameraActivity : AppCompatActivity() {
         else if (requestCode == CODE_GALLERY && resultCode == Activity.RESULT_OK){
             Glide.with(this).load(data?.data).into(binding.imageView2)
             status_photo = true
+
+            val uri: Uri? =  data?.data
+            photo = uri.toString()
+            bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
         }
+    }
+
+    private fun getMax(arr: FloatArray): Int{
+        var ind = 0
+        var min = 0.0F
+
+        for (i in 0..1000)
+        {
+            if(arr[i] > min){
+                ind = i
+                min = arr[i]
+            }
+        }
+        return ind
+    }
+
+    companion object {
+        const val CODE_CAMERA = 1
+        const val CODE_GALLERY = 2
     }
 }

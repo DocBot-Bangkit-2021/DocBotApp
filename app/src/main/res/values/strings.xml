@@ -68,4 +68,6 @@
     <string name="pilih">Pilih</string>
     <string name="dashboard">Dashboard</string>
 
+    <string name="hasil_analisis">Docbot Menganalisis %s Mengandung %s</string>
+
 </resources>

@@ -35,6 +35,7 @@ android {
 
     buildFeatures{
         viewBinding true
+        mlModelBinding true
     }
 }
 
@@ -53,6 +54,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation "androidx.cardview:cardview:1.0.0"
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0-rc1'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0-rc1'
 
     //testing
     testImplementation "junit:junit:$junitVersion"
