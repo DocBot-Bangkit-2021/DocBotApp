@@ -69,5 +69,9 @@
     <string name="dashboard">Dashboard</string>
 
     <string name="hasil_analisis">Docbot Menganalisis %s Mengandung %s</string>
+    <string name="hasil_analisis_2">DocBot menganalisis kamu bisa saja sedang mengalami %s</string>
+    <string name="pengananan">Penanganan tercepat untuk kondisi ini adalah %s</string>
+    <string name="artikel">Artikel Terkait</string>
+    <string name="harus_pergi">Kemana kamu harus pergi?</string>
 
 </resources>

@@ -3,7 +3,6 @@ package com.example.docbot.ui.cekgejala
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.ImageDecoder
 import android.graphics.Matrix
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +11,6 @@ import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
 import com.bumptech.glide.Glide
-import com.example.docbot.R
 import com.example.docbot.databinding.ActivityCheckCameraBinding
 import com.example.docbot.ml.MobilenetV110224Quant
 import com.example.docbot.ui.hasil.ResultActivity
