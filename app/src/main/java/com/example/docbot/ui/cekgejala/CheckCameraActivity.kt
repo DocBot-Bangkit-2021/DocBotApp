@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.ImageDecoder
+import android.graphics.Matrix
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,6 +30,7 @@ class CheckCameraActivity : AppCompatActivity() {
     private var status_photo = false
 
     private var photo : String? = null
+    private var rotate: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,8 +69,6 @@ class CheckCameraActivity : AppCompatActivity() {
 
                 val max = getMax(outputFeature0.floatArray)
 
-                binding.tvTes.text =  list[max]
-
                 val name = list[max]
 
                 // Releases model resources if no longer used.
@@ -91,21 +91,34 @@ class CheckCameraActivity : AppCompatActivity() {
         if(requestCode == CODE_CAMERA){
             if(resultCode == Activity.RESULT_OK){
                 val uri = data?.getStringExtra(CameraActivity.CEK_URI)
-//                Toast.makeText(this, "$uri", Toast.LENGTH_SHORT).show()
                 Glide.with(this)
                         .load(uri)
                         .into(binding.imageView2)
-                binding.imageView2.rotation = 90F
+                if (!rotate){
+                    binding.imageView2.rotation = 90F
+                    rotate = true
+                }
                 status_photo = true
+
+                photo = uri
+                val u = Uri.parse(uri)
+                bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, u)
             }
         }
         else if (requestCode == CODE_GALLERY && resultCode == Activity.RESULT_OK){
-            Glide.with(this).load(data?.data).into(binding.imageView2)
             status_photo = true
 
             val uri: Uri? =  data?.data
             photo = uri.toString()
             bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
+
+            if (rotate){
+                val matrix = Matrix()
+                matrix.postRotate(-90F)
+                val rotateBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+                Glide.with(this).load(rotateBitmap).into(binding.imageView2)
+                rotate = false
+            }else Glide.with(this).load(data?.data).into(binding.imageView2)
         }
     }
 

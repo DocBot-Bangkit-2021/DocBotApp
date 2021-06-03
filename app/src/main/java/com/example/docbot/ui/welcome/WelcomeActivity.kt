@@ -1,15 +1,18 @@
 package com.example.docbot.ui.welcome
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.viewpager.widget.ViewPager
 import com.example.docbot.R
 import com.example.docbot.databinding.ActivityWelcomeBinding
 import com.example.docbot.ui.dashboard.DashboardActivity
+import com.example.docbot.ui.splash.SplashScreenActivity
 import com.google.android.material.tabs.TabLayout
 
 class WelcomeActivity : AppCompatActivity() {
@@ -20,6 +23,11 @@ class WelcomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        if (getPref()) {
+            startActivity(Intent(this, DashboardActivity::class.java))
+            finish()
+        }
 
         //init
         binding.footer.setBackgroundResource(R.drawable.footer)
@@ -50,7 +58,11 @@ class WelcomeActivity : AppCompatActivity() {
         }
 
         binding.btnDashboard.setOnClickListener {
-            startActivity(Intent(this, DashboardActivity::class.java))
+           toDashboard()
+        }
+
+        binding.btnSkip.setOnClickListener {
+            toDashboard()
         }
 
         binding.viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
@@ -84,4 +96,25 @@ class WelcomeActivity : AppCompatActivity() {
         })
 
     }
+
+    private fun getPref() : Boolean{
+        val sharedPreferences = getSharedPreferences(SHARED_PREF, MODE_PRIVATE)
+        return sharedPreferences.getBoolean(IS_WELCOME, false)
+    }
+
+    private fun toDashboard(){
+        val sharedPreferences = getSharedPreferences(SHARED_PREF, MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putBoolean(IS_WELCOME, true)
+        editor.apply()
+
+        startActivity(Intent(this, DashboardActivity::class.java))
+        finish()
+    }
+
+    companion object{
+        const val SHARED_PREF = "sharedPref"
+        const val IS_WELCOME = "is_welcome"
+    }
+
 }

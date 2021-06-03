@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import com.example.docbot.R
+import com.example.docbot.ui.dashboard.DashboardActivity
 import com.example.docbot.ui.home.MainActivity
 import com.example.docbot.ui.welcome.WelcomeActivity
 
@@ -19,4 +21,5 @@ class SplashScreenActivity : AppCompatActivity() {
             finish()
         }, 2000)
     }
+
 }

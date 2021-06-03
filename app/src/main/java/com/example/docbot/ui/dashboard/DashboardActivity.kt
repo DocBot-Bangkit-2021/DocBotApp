@@ -51,10 +51,10 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         binding.button.setOnClickListener {
-            startActivity(Intent(this, CheckActivity::class.java))
+            startActivity(Intent(this, CheckCameraActivity::class.java))
         }
         binding.buttonCv19.setOnClickListener {
-            startActivity(Intent(this, CheckCameraActivity::class.java))
+            startActivity(Intent(this, CheckActivity::class.java))
         }
     }
 }
