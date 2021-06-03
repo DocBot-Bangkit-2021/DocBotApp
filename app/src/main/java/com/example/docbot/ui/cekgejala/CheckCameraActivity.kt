@@ -5,19 +5,20 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Matrix
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.docbot.databinding.ActivityCheckCameraBinding
-import com.example.docbot.ml.MobilenetV110224Quant
+import com.example.docbot.ml.Fruitsvegetable02V5
 import com.example.docbot.ui.hasil.ResultActivity
-import com.example.docbot.ui.loadingcek.LoadingCekActivity
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
+import java.nio.ByteBuffer
+import java.nio.ByteOrder
 
 class CheckCameraActivity : AppCompatActivity() {
 
@@ -35,7 +36,7 @@ class CheckCameraActivity : AppCompatActivity() {
         binding = ActivityCheckCameraBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val filename = "label.txt"
+        val filename = "fruits2.txt"
         val inputString = application.assets.open(filename).bufferedReader().use { it.readText() }
         val list = inputString.split("\n")
 
@@ -49,17 +50,36 @@ class CheckCameraActivity : AppCompatActivity() {
         }
         binding.btnCek.setOnClickListener {
             if (status_photo){
-                val resized : Bitmap = Bitmap.createScaledBitmap(bitmap, 224, 224, true)
-                val model = MobilenetV110224Quant.newInstance(this)
+                val resized : Bitmap = Bitmap.createScaledBitmap(bitmap, 150, 150, true)
+                val imgData: ByteBuffer = ByteBuffer.allocateDirect(Float.SIZE_BYTES * 150 * 150 * 3)
+                imgData.order(ByteOrder.nativeOrder())
+
+                val intValues = IntArray(150 * 150)
+                resized.getPixels(intValues, 0, resized.width, 0, 0, resized.width, resized.height)
+
+                var pixel = 0
+                for (i in 0..149) {
+                    for (j in 0..149) {
+                        val `val` = intValues[pixel++]
+                        imgData.putFloat((`val` shr 16 and 0xFF) / 255f)
+                        imgData.putFloat((`val` shr 8 and 0xFF) / 255f)
+                        imgData.putFloat((`val` and 0xFF) / 255f)
+                    }
+                }
+
+                val model = Fruitsvegetable02V5.newInstance(this)
 
                 // Creates inputs for reference.
-                val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.UINT8)
+                val inputFeature0 = TensorBuffer.createFixedSize(
+                    intArrayOf(1, 150, 150, 3),
+                    DataType.FLOAT32
+                )
 
                 val tBuffer = TensorImage.fromBitmap(resized)
-                val byteBuffer = tBuffer.buffer
-//                Log.d("AJG", "$resized")
 
-                inputFeature0.loadBuffer(byteBuffer)
+                val byteBuffer = TensorImage.createFrom(tBuffer, DataType.FLOAT32).buffer
+//                Log.d("CEK", "$byteBuffer -------- $inputFeature0")
+                inputFeature0.loadBuffer(imgData)
 
                 // Runs model inference and gets result.
                 val outputs = model.process(inputFeature0)
@@ -68,6 +88,8 @@ class CheckCameraActivity : AppCompatActivity() {
                 val max = getMax(outputFeature0.floatArray)
 
                 val name = list[max]
+
+                Log.d("CEK", "$name")
 
                 // Releases model resources if no longer used.
                 model.close()
@@ -113,7 +135,15 @@ class CheckCameraActivity : AppCompatActivity() {
             if (rotate){
                 val matrix = Matrix()
                 matrix.postRotate(-90F)
-                val rotateBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+                val rotateBitmap = Bitmap.createBitmap(
+                    bitmap,
+                    0,
+                    0,
+                    bitmap.width,
+                    bitmap.height,
+                    matrix,
+                    true
+                )
                 Glide.with(this).load(rotateBitmap).into(binding.imageView2)
                 rotate = false
             }else Glide.with(this).load(data?.data).into(binding.imageView2)
@@ -124,7 +154,7 @@ class CheckCameraActivity : AppCompatActivity() {
         var ind = 0
         var min = 0.0F
 
-        for (i in 0..1000)
+        for (i in 0..5)
         {
             if(arr[i] > min){
                 ind = i
