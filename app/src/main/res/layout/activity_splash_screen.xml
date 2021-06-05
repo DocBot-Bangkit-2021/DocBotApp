@@ -15,8 +15,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="-108dp"
         android:layout_marginTop="-193dp"
-        android:contentDescription="@string/componen_bubble_splash"
-        android:src="@drawable/bubble_splash1"
+        android:contentDescription="@string/componen_buble_splash"
+        android:src="@drawable/buble_splash1"
         tools:ignore="RtlCompat" />
 
     <ImageView
@@ -26,9 +26,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="-119dp"
-        android:src="@drawable/bubble_splash1"
+        android:src="@drawable/buble_splash1"
         tools:ignore="RtlCompat"
-        android:contentDescription="@string/componen_bubble_splash" />
+        android:contentDescription="@string/componen_buble_splash" />
 
     <ImageView
         android:id="@+id/docbot_logo"
@@ -60,7 +60,7 @@
         android:layout_marginEnd="6dp"
         android:src="@drawable/buble_splash"
         tools:ignore="RtlCompat"
-        android:contentDescription="@string/componen_bubble_splash" />
+        android:contentDescription="@string/componen_buble_splash" />
 
     <ImageView
         android:layout_width="201dp"
@@ -69,9 +69,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="-40dp"
         android:layout_marginBottom="-15dp"
-        android:src="@drawable/bubble_splash1"
+        android:src="@drawable/buble_splash1"
         tools:ignore="RtlCompat"
-        android:contentDescription="@string/componen_bubble_splash" />
+        android:contentDescription="@string/componen_buble_splash" />
 
     <ImageView
         android:layout_width="120dp"
@@ -80,7 +80,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="-40dp"
         android:layout_marginBottom="16dp"
-        android:src="@drawable/bubble_splash1"
+        android:src="@drawable/buble_splash1"
         tools:ignore="RtlCompat"
-        android:contentDescription="@string/componen_bubble_splash" />
+        android:contentDescription="@string/componen_buble_splash" />
 </RelativeLayout>
