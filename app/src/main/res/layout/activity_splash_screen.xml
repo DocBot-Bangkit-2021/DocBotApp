@@ -9,6 +9,7 @@
     tools:context=".ui.splash.SplashScreenActivity">
 
     <ImageView
+        android:id="@+id/buble_splash1"
         android:layout_width="404dp"
         android:layout_height="404dp"
         android:layout_alignParentStart="true"
@@ -20,7 +21,7 @@
         tools:ignore="RtlCompat" />
 
     <ImageView
-        android:id="@+id/bubble_splash2"
+        android:id="@+id/buble_splash2"
         android:layout_width="259dp"
         android:layout_height="259dp"
         android:layout_alignParentTop="true"
@@ -52,9 +53,10 @@
         app:lottie_speed="2" />
 
     <ImageView
+        android:id="@+id/buble"
         android:layout_width="62dp"
         android:layout_height="51dp"
-        android:layout_below="@+id/bubble_splash2"
+        android:layout_below="@+id/buble_splash2"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="6dp"
@@ -63,6 +65,7 @@
         android:contentDescription="@string/componen_buble_splash" />
 
     <ImageView
+        android:id="@+id/buble_splash3"
         android:layout_width="201dp"
         android:layout_height="195dp"
         android:layout_alignParentStart="true"
@@ -74,6 +77,7 @@
         android:contentDescription="@string/componen_buble_splash" />
 
     <ImageView
+        android:id="@+id/buble_splash4"
         android:layout_width="120dp"
         android:layout_height="214dp"
         android:layout_alignParentEnd="true"
