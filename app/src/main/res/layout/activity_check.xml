@@ -33,7 +33,7 @@
             app:layout_constraintTop_toBottomOf="@+id/gender">
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/radio_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -42,7 +42,7 @@
                 android:textSize="16sp" />
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/radio_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -101,41 +101,49 @@
                 android:textSize="16sp"
                 android:text="@string/demam" />
             <CheckBox
+                android:id="@+id/cb_batuk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:text="@string/batuk" />
             <CheckBox
+                android:id="@+id/cb_hidung"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:text="@string/hidung" />
             <CheckBox
+                android:id="@+id/cb_nyeri"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:text="@string/nyeri" />
             <CheckBox
+                android:id="@+id/cb_lelah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:text="@string/lelah" />
             <CheckBox
+                android:id="@+id/cb_diare"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:text="@string/diare" />
             <CheckBox
+                android:id="@+id/cb_paru"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:text="@string/paru" />
             <CheckBox
+                android:id="@+id/cb_jalan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:text="@string/jalan" />
             <CheckBox
+                android:id="@+id/cb_isolasi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
