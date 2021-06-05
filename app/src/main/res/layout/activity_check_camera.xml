@@ -56,5 +56,4 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_ambil" />
 
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

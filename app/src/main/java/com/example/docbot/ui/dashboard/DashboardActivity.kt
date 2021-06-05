@@ -50,8 +50,15 @@ class DashboardActivity : AppCompatActivity() {
             adapter = puskesmasAdapter
         }
 
-        binding.button.setOnClickListener {
-            startActivity(Intent(this, CheckCameraActivity::class.java))
+        binding.btnCekGejalaUmum.setOnClickListener {
+            val intent = Intent(this, CheckCameraActivity::class.java)
+            intent.putExtra(CheckCameraActivity.EXTRA_ACT, "umum")
+            startActivity(intent)
+        }
+        binding.btnBuah.setOnClickListener {
+            val intent = Intent(this, CheckCameraActivity::class.java)
+            intent.putExtra(CheckCameraActivity.EXTRA_ACT, "buah")
+            startActivity(intent)
         }
         binding.buttonCv19.setOnClickListener {
             startActivity(Intent(this, CheckActivity::class.java))

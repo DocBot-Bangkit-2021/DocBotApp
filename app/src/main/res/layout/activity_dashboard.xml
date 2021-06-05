@@ -45,37 +45,54 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_ask" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/roundedbutton"
-        android:drawableLeft="@drawable/stetoskop_1"
-        android:text="@string/check"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
+    <LinearLayout
+        android:id="@+id/ll_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.004"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/textView14">
 
-    <Button
-        android:id="@+id/button_cv19"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/roundedbutton"
-        android:drawableLeft="@drawable/stetoskop_1"
-        android:text="@string/check_cv19"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.162"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        <Button
+            android:id="@+id/btn_cek_gejala_umum"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/roundedbutton"
+            android:drawableLeft="@drawable/stetoskop_1"
+            android:text="@string/check"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/button_cv19"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/roundedbutton"
+            android:drawableLeft="@drawable/stetoskop_1"
+            android:text="@string/check_cv19"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:layout_marginStart="16dp"/>
+
+        <Button
+            android:id="@+id/btn_buah"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/roundedbutton"
+            android:drawableLeft="@drawable/stetoskop_1"
+            android:text="@string/check_cv19"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:layout_marginStart="16dp"/>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView15"
@@ -87,7 +104,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/ll_btn" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -97,7 +114,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.896"
         app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/ll_btn" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_news"
