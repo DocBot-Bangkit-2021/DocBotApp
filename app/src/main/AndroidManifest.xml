@@ -15,10 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DocBot">
-        <activity android:name=".ui.hasil.ResultCvActivity"></activity>
+        <activity android:name=".ui.hasil.ResultDiseasesActivity"></activity>
+        <activity android:name=".ui.hasil.ResultCvActivity" />
         <activity android:name=".ui.hasil.ResultActivity" />
         <activity android:name=".ui.cekgejala.CameraActivity" />
-        <activity android:name=".ui.cekgejala.CheckCameraActivity"></activity>
+        <activity android:name=".ui.cekgejala.CheckCameraActivity" />
         <activity android:name=".ui.account.FormAccountActivity" />
         <activity android:name=".ui.account.AccountResultActivity" />
         <activity android:name=".ui.loadingcek.LoadingCekActivity" />

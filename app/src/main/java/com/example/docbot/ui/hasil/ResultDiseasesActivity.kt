@@ -8,57 +8,71 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.docbot.R
-import com.example.docbot.databinding.ActivityResultBinding
-import com.example.docbot.ml.Fruitsvegetable02V5
+import com.example.docbot.databinding.ActivityResultDiseasesBinding
+import com.example.docbot.ml.Diseases01V8Best
 import com.example.docbot.ui.cekgejala.CameraActivity
 import com.example.docbot.ui.cekgejala.CheckCameraActivity
+import com.example.docbot.ui.cekgejala.CheckViewModel
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 
-class ResultActivity : AppCompatActivity() {
+class ResultDiseasesActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityResultBinding
+    private lateinit var binding: ActivityResultDiseasesBinding
 
     private lateinit var bitmap: Bitmap
     private var statusPhoto = false
     private var photo : String? = null
     private var name : String? = null
-    private var vit : String? = null
+    private var penanganan : String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityResultBinding.inflate(layoutInflater)
+        binding = ActivityResultDiseasesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         name = intent.getStringExtra(EXTRA_NAME)
         photo = intent.getStringExtra(EXTRA_IMAGE)
-        vit = intent.getStringExtra(EXTRA_VIT)
-
+        penanganan = intent.getStringExtra(EXTRA_DATA)
         setData()
+
+        //dummy artikel
+        val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[CheckViewModel::class.java]
+        val artikel = viewModel.getNews()
+        val newsAdapter = ResultNewsAdapter()
+        newsAdapter.setNews(artikel.take(2))
+        with(binding.rvNewsRs){
+            layoutManager = LinearLayoutManager(this@ResultDiseasesActivity)
+            setHasFixedSize(true)
+            adapter = newsAdapter
+        }
 
         binding.btnAmbil.setOnClickListener {
             startActivityForResult(Intent(this, CameraActivity::class.java), CODE_CAMERA)
         }
+
         binding.btnPilih.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = "image/*"
             startActivityForResult(intent, CODE_GALLERY)
         }
+
         binding.btnCek.setOnClickListener {
             if (statusPhoto){
-                val inputString = application.assets.open("fruits2.txt").bufferedReader().use { it.readText() }
+                val inputString = application.assets.open("diseases.txt").bufferedReader().use { it.readText() }
                 val list =  inputString.split("\n")
 
-                val model = Fruitsvegetable02V5.newInstance(this)
-                val inputFeature0 = TensorBuffer.createFixedSize(
-                        intArrayOf(1, 150, 150, 3),
-                        DataType.FLOAT32
-                )
-                inputFeature0.loadBuffer(getImageData(150))
+                val model = Diseases01V8Best.newInstance(this)
+
+                val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.FLOAT32)
+                inputFeature0.loadBuffer(getImageData(224))
+
                 val outputs = model.process(inputFeature0)
                 val outputFeature0 = outputs.outputFeature0AsTensorBuffer
 
@@ -67,14 +81,9 @@ class ResultActivity : AppCompatActivity() {
                 model.close()
 
                 setData()
+
             } else Toast.makeText(this, "Ambil gambar dulu", Toast.LENGTH_SHORT).show()
         }
-    }
-
-    private fun setData(){
-        binding.tvAnalisis.text = resources.getString(R.string.hasil_analisis, name, vit)
-        binding.tvManfaat.text = resources.getString(R.string.manfaat_buah)
-        Glide.with(this).load(photo).into(binding.imageView2)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -91,7 +100,8 @@ class ResultActivity : AppCompatActivity() {
                 val u = Uri.parse(uri)
                 bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, u)
             }
-        }else if (requestCode == CODE_GALLERY && resultCode == Activity.RESULT_OK){
+        }
+        else if (requestCode == CheckCameraActivity.CODE_GALLERY && resultCode == Activity.RESULT_OK){
             statusPhoto = true
 
             val uri: Uri? =  data?.data
@@ -106,7 +116,7 @@ class ResultActivity : AppCompatActivity() {
         var ind = 0
         var min = 0.0F
 
-        for (i in 0..5)
+        for (i in 0..3)
         {
             if(arr[i] > min){
                 ind = i
@@ -136,10 +146,16 @@ class ResultActivity : AppCompatActivity() {
         return imgData
     }
 
+    private fun setData(){
+        binding.tvAnalisis.text = resources.getString(R.string.hasil_analisis_2, name)
+        binding.tvPenanganan.text = resources.getString(R.string.pengananan, penanganan)
+        Glide.with(this).load(photo).into(binding.imageView2)
+    }
+
     companion object{
         const val EXTRA_NAME = "extra_name"
         const val EXTRA_IMAGE = "extra_image"
-        const val EXTRA_VIT = "extra_vit"
+        const val EXTRA_DATA = "extra_data"
         const val CODE_CAMERA = 1
         const val CODE_GALLERY = 2
     }

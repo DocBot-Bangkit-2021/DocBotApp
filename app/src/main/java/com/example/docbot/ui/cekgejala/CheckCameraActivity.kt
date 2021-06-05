@@ -15,6 +15,7 @@ import com.example.docbot.databinding.ActivityCheckCameraBinding
 import com.example.docbot.ml.Diseases01V8Best
 import com.example.docbot.ml.Fruitsvegetable02V5
 import com.example.docbot.ui.hasil.ResultActivity
+import com.example.docbot.ui.hasil.ResultDiseasesActivity
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.nio.ByteBuffer
@@ -76,6 +77,7 @@ class CheckCameraActivity : AppCompatActivity() {
                     intent.putExtra(ResultActivity.EXTRA_IMAGE, photo)
                     intent.putExtra(ResultActivity.EXTRA_VIT, "vitamin C")
                     startActivity(intent)
+                    finish()
                 }else if(check == "umum"){
                     val list = getFileName("diseases.txt")
                     val model = Diseases01V8Best.newInstance(this)
@@ -91,11 +93,12 @@ class CheckCameraActivity : AppCompatActivity() {
 
                     model.close()
 
-                    val intent = Intent(this, ResultActivity::class.java)
-                    intent.putExtra(ResultActivity.EXTRA_NAME, name)
-                    intent.putExtra(ResultActivity.EXTRA_IMAGE, photo)
-                    intent.putExtra(ResultActivity.EXTRA_VIT, "extra_data")
+                    val intent = Intent(this, ResultDiseasesActivity::class.java)
+                    intent.putExtra(ResultDiseasesActivity.EXTRA_NAME, name)
+                    intent.putExtra(ResultDiseasesActivity.EXTRA_IMAGE, photo)
+                    intent.putExtra(ResultDiseasesActivity.EXTRA_DATA, "segera melakukan konsultasi dengan dokter")
                     startActivity(intent)
+                    finish()
                 }
 
             }
