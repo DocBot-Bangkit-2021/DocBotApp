@@ -45,54 +45,59 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_ask" />
 
-    <LinearLayout
+    <HorizontalScrollView
         android:id="@+id/ll_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.004"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14">
 
-        <Button
-            android:id="@+id/btn_cek_gejala_umum"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/roundedbutton"
-            android:drawableLeft="@drawable/stetoskop_1"
-            android:text="@string/check"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textColor="@color/black" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button_cv19"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/roundedbutton"
-            android:drawableLeft="@drawable/stetoskop_1"
-            android:text="@string/check_cv19"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:layout_marginStart="16dp"/>
+            <Button
+                android:id="@+id/btn_cek_gejala_umum"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/roundedbutton"
+                android:drawableLeft="@drawable/stetoskop_1"
+                android:text="@string/check"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/black" />
 
-        <Button
-            android:id="@+id/btn_buah"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/roundedbutton"
-            android:drawableLeft="@drawable/stetoskop_1"
-            android:text="@string/check_cv19"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:layout_marginStart="16dp"/>
-    </LinearLayout>
+            <Button
+                android:id="@+id/button_cv19"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/roundedbutton"
+                android:drawableLeft="@drawable/stetoskop_1"
+                android:text="@string/check_cv19"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:layout_marginStart="16dp"/>
+
+            <Button
+                android:id="@+id/btn_buah"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/roundedbutton"
+                android:drawableLeft="@drawable/stetoskop_1"
+                android:text="@string/check_buah"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:layout_marginStart="16dp"/>
+        </LinearLayout>
+    </HorizontalScrollView>
 
     <TextView
         android:id="@+id/textView15"
