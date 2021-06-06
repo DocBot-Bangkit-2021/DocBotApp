@@ -14,7 +14,9 @@
     <color name="app_green">#7CE063</color>
     <color name="app_yellow">#FFD361</color>
     <color name="app_pink">#EB5757</color>
-
     <color name="blue_btn">#A1EAED</color>
+
+    <color name="white_grey">#EDECEC</color>
+    <color name="grey">#AFAEAE</color>
 
 </resources>

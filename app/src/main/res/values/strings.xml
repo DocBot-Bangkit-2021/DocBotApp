@@ -25,13 +25,13 @@
     <string name="et_title_health_record">Riwayat Penyakit</string>
     <string name="et_title_allergy">Alergi</string>
 
-    <string name="welcome_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aut distinctio ea expedita facere fugiat incidunt</string>
-    <string name="welcome_2">Description 2</string>
-    <string name="welcome_3">Description 3</string>
+    <string name="welcome_1">Dengan DocBot cek gejala penyakitmu, gejala Covid19 serta kandungan dan manfaat buah sayur menjadi lebih mudah</string>
+    <string name="welcome_2">DocBot menerapkan teknologi AI dalam menganalisis kesehatan input form dan gambar</string>
+    <string name="welcome_3">DocBot memberikan informasi artikel bermanfaat berdasarkan prediksi gejala yang diinput</string>
     <string name="skip">Skip</string>
-    <string name="intro_title_1">Cek Gejala</string>
-    <string name="intro_title_2">Cek Gejala 2</string>
-    <string name="intro_title_3">Cek Gejala 3</string>
+    <string name="intro_title_1">Cek Gejala dan Kandungan Bahan Makanan</string>
+    <string name="intro_title_2">Teknologi Kesehatan</string>
+    <string name="intro_title_3">Informasi Kesehatan</string>
     <string name="login">Login</string>
 
     <string name="location">Lokasi</string>

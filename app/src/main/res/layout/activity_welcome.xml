@@ -2,25 +2,25 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/welcome_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/welcome_layout"
     tools:background="@drawable/bg_welcome"
     tools:context=".ui.welcome.WelcomeActivity">
 
     <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/view_pager"/>
+        android:layout_height="match_parent" />
 
     <ImageView
         android:id="@+id/img_welcome"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_marginTop="120dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
         tools:ignore="contentDescription"
-        tools:src="@drawable/welcome_1"/>
+        tools:src="@drawable/welcome_1" />
 
     <TextView
         android:id="@+id/tv_title"
@@ -28,20 +28,21 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/img_welcome"
         android:layout_marginTop="25dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="28sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        tools:text="@string/app_name"/>
+        tools:text="@string/app_name" />
 
     <LinearLayout
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_alignParentBottom="true"
-        tools:background="@drawable/footer"
         android:orientation="vertical"
-        android:scaleType="fitXY">
+        android:scaleType="fitXY"
+        tools:background="@drawable/footer">
 
         <TextView
             android:id="@+id/description"
@@ -50,30 +51,32 @@
             android:layout_marginLeft="52dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="52dp"
+            android:fontFamily="@font/nunito_semibold"
             android:gravity="center"
-            tools:text="@string/welcome_1"
-            android:textColor="@color/white"
+            android:textColor="@color/white_grey"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="@string/welcome_1" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            app:tabIndicator="@android:color/transparent"
             android:layout_gravity="center"
-            app:tabBackground="@drawable/indicator_selector" />
+            android:background="@android:color/transparent"
+            app:tabBackground="@drawable/indicator_selector"
+            app:tabIndicator="@android:color/transparent" />
 
         <Button
             android:id="@+id/btn_dashboard"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:theme="@style/button"
             android:layout_gravity="center"
-            android:textColor="@color/black"
+            android:background="@drawable/bg_btn_dashboard"
             android:text="@string/dashboard"
-            android:visibility="gone"/>
+            android:textColor="@color/black"
+            android:theme="@style/button"
+            android:visibility="gone" />
 
         <RelativeLayout
             android:id="@+id/btn_layout"
@@ -81,17 +84,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="48dp"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="48dp">
 
             <Button
                 android:id="@+id/btn_skip"
                 android:layout_width="100dp"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:layout_alignParentStart="true"
+                android:background="@drawable/bg_btn_dashboard"
+                android:fontFamily="@font/nunito_semibold"
                 android:text="@string/skip"
-                android:theme="@style/button"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:theme="@style/button" />
 
 
             <ImageButton
@@ -100,15 +104,14 @@
                 android:layout_height="40dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_next"
                 android:background="@drawable/ic_circle_black"
+                android:src="@drawable/ic_next"
                 tools:ignore="contentDescription" />
 
 
         </RelativeLayout>
 
     </LinearLayout>
-
 
 
 </RelativeLayout>
