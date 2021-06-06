@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal">
+
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"
-        android:elevation="12dp"
-        app:cardElevation="12dp"
-        app:cardCornerRadius="10dp">
+        android:layout_marginEnd="16dp"
+        card:cardCornerRadius="5dp"
+        card:cardElevation="5dp"
+        card:cardUseCompatPadding="true">
 
         <TextView
             android:id="@+id/tv_ask"
-            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="24dp"
-            android:paddingEnd="16dp"
+            android:fontFamily="@font/nunito"
+            android:gravity="center"
             android:paddingStart="16dp"
-            android:paddingRight="16dp"
             android:paddingLeft="16dp"
+            android:paddingEnd="16dp"
+            android:paddingRight="16dp"
             android:text="@string/app_name"
-            android:textStyle="bold"
             android:textSize="12sp"
-            android:fontFamily="@font/nunito"/>
+            android:textStyle="bold" />
 
     </androidx.cardview.widget.CardView>
 
