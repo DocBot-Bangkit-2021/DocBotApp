@@ -38,6 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="26dp"
+                android:fontFamily="@font/nunito_semibold"
                 android:text="@string/male"
                 android:textSize="16sp" />
 
@@ -46,6 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:fontFamily="@font/nunito_semibold"
                 android:text="@string/female"
                 android:textSize="16sp" />
         </RadioGroup>
@@ -77,10 +79,10 @@
             android:id="@+id/tv_qGejala"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/nunito"
             android:text="@string/question_gejala"
             android:textSize="20sp"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editText" />
@@ -98,56 +100,73 @@
                 android:id="@+id/cb_demam"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="@string/demam" />
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/demam"
+                android:textSize="16sp" />
+
             <CheckBox
                 android:id="@+id/cb_batuk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="@string/batuk" />
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/batuk"
+                android:textSize="16sp" />
+
             <CheckBox
                 android:id="@+id/cb_hidung"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="@string/hidung" />
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/hidung"
+                android:textSize="16sp" />
+
             <CheckBox
                 android:id="@+id/cb_nyeri"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="@string/nyeri" />
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/nyeri"
+                android:textSize="16sp" />
+
             <CheckBox
                 android:id="@+id/cb_lelah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="@string/lelah" />
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/lelah"
+                android:textSize="16sp" />
+
             <CheckBox
                 android:id="@+id/cb_diare"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="@string/diare" />
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/diare"
+                android:textSize="16sp" />
+
             <CheckBox
                 android:id="@+id/cb_paru"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="@string/paru" />
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/paru"
+                android:textSize="16sp" />
+
             <CheckBox
                 android:id="@+id/cb_jalan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="@string/jalan" />
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/jalan"
+                android:textSize="16sp" />
+
             <CheckBox
                 android:id="@+id/cb_isolasi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="@string/isolasi" />
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/isolasi"
+                android:textSize="16sp" />
         </RadioGroup>
 
         <Button

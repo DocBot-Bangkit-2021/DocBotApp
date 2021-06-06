@@ -36,6 +36,12 @@ class CheckCameraActivity : AppCompatActivity() {
         binding = ActivityCheckCameraBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Set action bar
+        supportActionBar?.elevation = 0f
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val title = intent.getStringExtra(EXTRA_TITLE_TOOLBAR)
+        supportActionBar?.title = title
+
         val check = intent.getStringExtra(EXTRA_ACT)
 
         binding.btnAmbil.setOnClickListener {
@@ -104,6 +110,11 @@ class CheckCameraActivity : AppCompatActivity() {
             }
             else Toast.makeText(this, "Ambil gambar dulu", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -176,5 +187,6 @@ class CheckCameraActivity : AppCompatActivity() {
         const val CODE_CAMERA = 1
         const val CODE_GALLERY = 2
         const val EXTRA_ACT = "extra_data"
+        const val EXTRA_TITLE_TOOLBAR = "extra_toolbar"
     }
 }

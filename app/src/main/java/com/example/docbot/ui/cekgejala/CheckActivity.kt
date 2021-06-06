@@ -23,6 +23,11 @@ class CheckActivity : AppCompatActivity() {
         binding = ActivityCheckBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Set action bar
+        supportActionBar?.elevation = 0f
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Cek Gejala Covid"
+
         binding.btnCekLoading.setOnClickListener {
 
             val genderCheck = binding.radioGroup.checkedRadioButtonId
@@ -142,4 +147,10 @@ class CheckActivity : AppCompatActivity() {
 
         }
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
+    }
+
 }

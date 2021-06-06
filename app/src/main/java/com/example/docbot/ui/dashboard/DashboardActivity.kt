@@ -83,11 +83,13 @@ class DashboardActivity : AppCompatActivity() {
         binding.contentDashboard.btnCekGejalaUmum.setOnClickListener {
             val intent = Intent(this, CheckCameraActivity::class.java)
             intent.putExtra(CheckCameraActivity.EXTRA_ACT, "umum")
+            intent.putExtra(CheckCameraActivity.EXTRA_TITLE_TOOLBAR, "Cek Gejala Umum")
             startActivity(intent)
         }
         binding.contentDashboard.btnBuah.setOnClickListener {
             val intent = Intent(this, CheckCameraActivity::class.java)
             intent.putExtra(CheckCameraActivity.EXTRA_ACT, "buah")
+            intent.putExtra(CheckCameraActivity.EXTRA_TITLE_TOOLBAR, "Kandungan Buah")
             startActivity(intent)
         }
         binding.contentDashboard.buttonCv19.setOnClickListener {
