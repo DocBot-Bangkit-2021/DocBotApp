@@ -82,6 +82,34 @@
     <string name="membantu">Membantu</string>
     <string name="biasa">Biasa saja</string>
     <string name="kurang">Kurang</string>
+    <string name="bangkit_2021">Bangkit 2021</string>
 
+
+    <string name="dark_mode">Dark Mode</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="setting">Setting</string>
+    <string name="more_apps">More Apps</string>
+    <string name="follow_us">Follow Us</string>
+    <string name="github">GitHub</string>
+    <string name="gmail">Email</string>
+    <string name="about">About</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="team_id">B21-CAP0362</string>
+    <string name="nurimammasri">M2082044 - Nur Imam Masri</string>
+    <string name="rafkah">M2242154 - Rafkah Rizqia</string>
+    <string name="dian">A0131304 - Dian Arisma Wicakso</string>
+    <string name="ari">A0141345 - I Made Ari Widiarsana</string>
+    <string name="nurul">C2242155 - Nurul Uswatun Hasanah</string>
 
 </resources>

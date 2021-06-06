@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_switch"
+            android:icon="@drawable/ic_darkmode"
+            app:actionLayout="@layout/switch_darkmode"
+            android:title="@string/dark_mode"/>
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_setting"
+            android:title="@string/setting" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_about"
+            android:title="@string/about" />
+        <item
+            android:id="@+id/nav_moreapps"
+            android:icon="@drawable/ic_more_apps"
+            android:title="@string/more_apps" />
+        <item
+            android:id="@+id/nav_message"
+            android:icon="@drawable/ic_send"
+            android:title="@string/send_feedback" />
+    </group>
+    <item android:title="@string/follow_us">
+        <menu>
+            <item
+                android:id="@+id/nav_github"
+                android:icon="@drawable/ic_github"
+                android:title="@string/github" />
+            <item
+                android:id="@+id/nav_gmail"
+                android:icon="@drawable/ic_email"
+                android:title="@string/gmail" />
+        </menu>
+    </item>
+</menu>
