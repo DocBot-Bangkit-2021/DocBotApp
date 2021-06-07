@@ -6,7 +6,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.1.2"
+        classpath 'com.android.tools.build:gradle:4.2.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         classpath 'com.google.gms:google-services:4.3.8'
@@ -30,6 +30,9 @@ ext {
     recyclerViewVersion = '1.1.0'
     glideVersion = '4.11.0'
     androidXTestVersion = '1.2.0'
+
+    retrofitVersion = '2.9.0'
+    gsonVersion = '2.9.0'
 }
 
 allprojects {

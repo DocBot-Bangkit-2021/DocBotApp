@@ -21,6 +21,7 @@ import com.example.docbot.databinding.ActivityDashboardBinding
 import com.example.docbot.ui.about.AboutActivity
 import com.example.docbot.ui.cekgejala.CheckActivity
 import com.example.docbot.ui.cekgejala.CheckCameraActivity
+import com.example.docbot.ui.information.InformationActivity
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -94,6 +95,9 @@ class DashboardActivity : AppCompatActivity() {
         }
         binding.contentDashboard.buttonCv19.setOnClickListener {
             startActivity(Intent(this, CheckActivity::class.java))
+        }
+        binding.tvToInfoActivity.setOnClickListener{
+            startActivity(Intent(this, InformationActivity::class.java))
         }
     }
     override fun onBackPressed() {

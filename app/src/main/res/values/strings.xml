@@ -25,13 +25,13 @@
     <string name="et_title_health_record">Riwayat Penyakit</string>
     <string name="et_title_allergy">Alergi</string>
 
-    <string name="welcome_1">Dengan DocBot cek gejala penyakitmu, gejala Covid19 serta kandungan dan manfaat buah sayur menjadi lebih mudah</string>
-    <string name="welcome_2">DocBot menerapkan teknologi AI dalam menganalisis kesehatan input form dan gambar</string>
-    <string name="welcome_3">DocBot memberikan informasi artikel bermanfaat berdasarkan prediksi gejala yang diinput</string>
+    <string name="welcome_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aut distinctio ea expedita facere fugiat incidunt</string>
+    <string name="welcome_2">Description 2</string>
+    <string name="welcome_3">Description 3</string>
     <string name="skip">Skip</string>
-    <string name="intro_title_1">Cek Gejala dan Kandungan Bahan Makanan</string>
-    <string name="intro_title_2">Teknologi Kesehatan</string>
-    <string name="intro_title_3">Informasi Kesehatan</string>
+    <string name="intro_title_1">Cek Gejala</string>
+    <string name="intro_title_2">Cek Gejala 2</string>
+    <string name="intro_title_3">Cek Gejala 3</string>
     <string name="login">Login</string>
 
     <string name="location">Lokasi</string>
@@ -74,43 +74,5 @@
     <string name="pengananan">Penanganan tercepat untuk kondisi ini adalah %s</string>
     <string name="artikel">Artikel Terkait</string>
     <string name="harus_pergi">Kemana kamu harus pergi?</string>
-    <string name="componen_buble_splash">Componen Bubble Splash</string>
-    <string name="docbot_logo">DocBot Logo</string>
-
-    <string name="manfaat_buah">Buah ini baik untuk meningkatkan daya tahan tubuh</string>
-    <string name="feedback_ask">Bagaimana pengalamanmu bersama DocBot ?</string>
-    <string name="membantu">Membantu</string>
-    <string name="biasa">Biasa saja</string>
-    <string name="kurang">Kurang</string>
-    <string name="bangkit_2021">Bangkit 2021</string>
-
-
-    <string name="dark_mode">Dark Mode</string>
-    <string name="send_feedback">Send Feedback</string>
-    <string name="setting">Setting</string>
-    <string name="more_apps">More Apps</string>
-    <string name="follow_us">Follow Us</string>
-    <string name="github">GitHub</string>
-    <string name="gmail">Email</string>
-    <string name="about">About</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="title_activity_about">AboutActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-
-    <string name="team_id">B21-CAP0362</string>
-    <string name="nurimammasri">M2082044 - Nur Imam Masri</string>
-    <string name="rafkah">M2242154 - Rafkah Rizqia</string>
-    <string name="dian">A0131304 - Dian Arisma Wicakso</string>
-    <string name="ari">A0141345 - I Made Ari Widiarsana</string>
-    <string name="nurul">C2242155 - Nurul Uswatun Hasanah</string>
-    <string name="image_take_view">image take view</string>
 
 </resources>
