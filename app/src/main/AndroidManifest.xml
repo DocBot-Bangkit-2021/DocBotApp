@@ -8,6 +8,8 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,6 +26,12 @@
         <activity android:name=".ui.account.FormAccountActivity" />
         <activity android:name=".ui.account.AccountResultActivity" />
         <activity android:name=".ui.loadingcek.LoadingCekActivity" />
+        <activity
+            android:name=".ui.information.InformationActivity"
+            android:parentActivityName=".ui.dashboard.DashboardActivity" />
+        <activity
+            android:name=".ui.information.detail.DetailInformationActivity"
+            android:parentActivityName=".ui.information.InformationActivity" />
         <activity
             android:name=".ui.welcome.WelcomeActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
