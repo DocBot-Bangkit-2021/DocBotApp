@@ -64,4 +64,30 @@ class CheckViewModel: ViewModel() {
 
         })
     }
+
+    fun setArtikelFruit(name: String){
+        RetrofitInformation.create().getFruit().enqueue(object : Callback<List<ListResult>> {
+            override fun onResponse(
+                    call: Call<List<ListResult>>,
+                    response: Response<List<ListResult>>
+            ) {
+                if (response.isSuccessful){
+                    if (response.body().isNullOrEmpty()) return
+                    else{
+                        for (i in 0 until response.body()?.size!!){
+                            val dsName = response.body()!![i].name
+                            if (dsName.equals(name.trim(), ignoreCase = true)) {
+                                listNews.postValue(response.body()!![i].article)
+                            }
+                        }
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<List<ListResult>>, t: Throwable) {
+                Log.d("Failure", t.message.toString())
+            }
+
+        })
+    }
 }

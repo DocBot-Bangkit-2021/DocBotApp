@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.docbot.R
 import com.example.docbot.databinding.ActivityResultBinding
@@ -27,13 +29,17 @@ class ResultActivity : AppCompatActivity() {
     private lateinit var bitmap: Bitmap
     private var statusPhoto = false
     private var photo : String? = null
-    private var name : String? = null
+    private var name : String = ""
     private var vit : String? = null
+
+    private lateinit var viewModel: CheckViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[CheckViewModel::class.java]
 
         name = intent.getStringExtra(EXTRA_NAME)
         photo = intent.getStringExtra(EXTRA_IMAGE)
@@ -73,6 +79,20 @@ class ResultActivity : AppCompatActivity() {
     }
 
     private fun setData(){
+        val dsName = name
+        viewModel.setArtikelFruit(dsName)
+        val newsAdapter = ResultNewsAdapter()
+        newsAdapter.notifyDataSetChanged()
+        viewModel.getNews().observe(this, {
+            newsAdapter.setNews(it)
+            newsAdapter.notifyDataSetChanged()
+        })
+        with(binding.rvNewsRs){
+            layoutManager = LinearLayoutManager(this@ResultActivity)
+            setHasFixedSize(true)
+            adapter = newsAdapter
+        }
+
         binding.tvAnalisis.text = resources.getString(R.string.hasil_analisis, name, vit)
         binding.tvManfaat.text = resources.getString(R.string.manfaat_buah)
         Glide.with(this).load(photo).into(binding.imageView2)
