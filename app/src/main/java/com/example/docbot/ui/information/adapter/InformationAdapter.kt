@@ -27,7 +27,7 @@ class InformationAdapter : RecyclerView.Adapter<InformationAdapter.InformationVi
         fun bind(items: InformationEntity) {
             binding.apply {
                 tvTitleInformation.text = items.name
-                Glide.with(itemView).load(items.desc).centerCrop().into(ivImageInformation)
+                Glide.with(itemView).load(items.image).centerCrop().into(ivImageInformation)
             }
             binding.root.setOnClickListener {
                 onItemClickCallback.onItemClicked(items)

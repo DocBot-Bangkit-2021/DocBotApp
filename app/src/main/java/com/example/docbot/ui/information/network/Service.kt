@@ -5,6 +5,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface Service {
-    @GET("covidinfo/article")
+    @GET("covidinfo")
     fun getCovidInfo(): Call<ListInformation>
 }

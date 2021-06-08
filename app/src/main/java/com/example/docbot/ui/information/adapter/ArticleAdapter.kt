@@ -27,7 +27,7 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() 
         fun bind(items: InformationEntity) {
             binding.apply {
                 titleArticle.text = items.name
-                Glide.with(itemView).load(items.desc).centerCrop().into(ivArticle)
+                Glide.with(itemView).load(items.image).centerCrop().into(ivArticle)
             }
 
             binding.root.setOnClickListener {
