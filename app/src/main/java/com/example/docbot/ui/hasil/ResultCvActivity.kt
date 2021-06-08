@@ -29,15 +29,15 @@ class ResultCvActivity : AppCompatActivity() {
             binding.textView18.text = "Tidak ada yang perlu kamu khawatirkan"
         }
 
-        //artikel
-        val artikel = viewModel.getNews()
-        val newsAdapter = ResultNewsAdapter()
-        newsAdapter.setNews(artikel.take(3))
-        with(binding.rvNewsRs){
-            layoutManager = LinearLayoutManager(this@ResultCvActivity)
-            setHasFixedSize(true)
-            adapter = newsAdapter
-        }
+//        //artikel
+//        val artikel = viewModel.getNews()
+//        val newsAdapter = ResultNewsAdapter()
+//        newsAdapter.setNews(artikel.take(3))
+//        with(binding.rvNewsRs){
+//            layoutManager = LinearLayoutManager(this@ResultCvActivity)
+//            setHasFixedSize(true)
+//            adapter = newsAdapter
+//        }
 
         //puskesmas
         val puskesmas = viewModel.getPuskesmas()
