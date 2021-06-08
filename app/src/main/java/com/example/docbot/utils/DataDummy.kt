@@ -53,18 +53,18 @@ object DataDummy {
         val puskesmas = ArrayList<PuskesmasEntity>()
 
         puskesmas.add(
-            PuskesmasEntity("Puskesmas Jati Negara",
-            "Jl. dimana mana hatiku suka ada puskesmas",
+            PuskesmasEntity(1,"Puskesmas Jati Negara",
+            "","Jl. dimana mana hatiku suka ada puskesmas",
             "08123456789")
         )
         puskesmas.add(
-            PuskesmasEntity("Puskesmas Jati Negara",
-                "Jl. dimana mana hatiku suka ada puskesmas",
+            PuskesmasEntity(2,"Puskesmas Jati Negara",
+                "","Jl. dimana mana hatiku suka ada puskesmas",
                 "08123456789")
         )
         puskesmas.add(
-            PuskesmasEntity("Puskesmas Jati Negara",
-                "Jl. dimana mana hatiku suka ada puskesmas",
+            PuskesmasEntity(3,"Puskesmas Jati Negara",
+                "", "Jl. dimana mana hatiku suka ada puskesmas",
                 "08123456789")
         )
         return puskesmas
