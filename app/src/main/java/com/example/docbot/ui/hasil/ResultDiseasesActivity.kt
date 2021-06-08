@@ -45,7 +45,6 @@ class ResultDiseasesActivity : AppCompatActivity() {
         penanganan = intent.getStringExtra(EXTRA_DATA)
         setData()
 
-
         binding.btnAmbil.setOnClickListener {
             startActivityForResult(Intent(this, CameraActivity::class.java), CODE_CAMERA)
         }

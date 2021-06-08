@@ -16,4 +16,7 @@ interface Service {
 
     @GET("disease_info")
     fun getDisease(): Call<List<ListResult>>
+
+    @GET("fruitvege_info")
+    fun getFruit(): Call<List<ListResult>>
 }

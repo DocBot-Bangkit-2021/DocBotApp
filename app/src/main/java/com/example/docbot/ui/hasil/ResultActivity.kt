@@ -14,6 +14,7 @@ import com.example.docbot.databinding.ActivityResultBinding
 import com.example.docbot.ml.Fruitsvegetable02V5
 import com.example.docbot.ui.cekgejala.CameraActivity
 import com.example.docbot.ui.cekgejala.CheckCameraActivity
+import com.example.docbot.ui.cekgejala.CheckViewModel
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.nio.ByteBuffer
