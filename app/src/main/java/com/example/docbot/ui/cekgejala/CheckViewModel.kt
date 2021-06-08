@@ -65,26 +65,27 @@ class CheckViewModel: ViewModel() {
         })
     }
 
+    val listFruits = MutableLiveData<ListFruits>()
+    fun getFruits() : LiveData<ListFruits> = listFruits
     fun setArtikelFruit(name: String){
-        RetrofitInformation.create().getFruit().enqueue(object : Callback<List<ListResult>> {
-            override fun onResponse(
-                    call: Call<List<ListResult>>,
-                    response: Response<List<ListResult>>
-            ) {
+        RetrofitInformation.create().getFruit().enqueue(object : Callback<List<ListFruits>> {
+            override fun onResponse(call: Call<List<ListFruits>>, response: Response<List<ListFruits>>) {
                 if (response.isSuccessful){
                     if (response.body().isNullOrEmpty()) return
                     else{
                         for (i in 0 until response.body()?.size!!){
                             val dsName = response.body()!![i].name
                             if (dsName.equals(name.trim(), ignoreCase = true)) {
-                                listNews.postValue(response.body()!![i].article)
+                                val res = response.body()!![i]
+                                listNews.postValue(res.article)
+                                listFruits.postValue(res)
                             }
                         }
                     }
                 }
             }
 
-            override fun onFailure(call: Call<List<ListResult>>, t: Throwable) {
+            override fun onFailure(call: Call<List<ListFruits>>, t: Throwable) {
                 Log.d("Failure", t.message.toString())
             }
 

@@ -7,6 +7,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,7 +31,6 @@ class ResultActivity : AppCompatActivity() {
     private var statusPhoto = false
     private var photo : String? = null
     private var name : String = ""
-    private var vit : String? = null
 
     private lateinit var viewModel: CheckViewModel
 
@@ -43,7 +43,6 @@ class ResultActivity : AppCompatActivity() {
 
         name = intent.getStringExtra(EXTRA_NAME)
         photo = intent.getStringExtra(EXTRA_IMAGE)
-        vit = intent.getStringExtra(EXTRA_VIT)
 
         setData()
 
@@ -83,9 +82,11 @@ class ResultActivity : AppCompatActivity() {
         viewModel.setArtikelFruit(dsName)
         val newsAdapter = ResultNewsAdapter()
         newsAdapter.notifyDataSetChanged()
-        viewModel.getNews().observe(this, {
-            newsAdapter.setNews(it)
+        viewModel.getFruits().observe(this, {
+            newsAdapter.setNews(it.article)
             newsAdapter.notifyDataSetChanged()
+            binding.tvAnalisis.text = resources.getString(R.string.hasil_analisis, name.trim(), it.vitamin)
+            binding.tvManfaat.text = resources.getString(R.string.manfaat_buah, it.benefits)
         })
         with(binding.rvNewsRs){
             layoutManager = LinearLayoutManager(this@ResultActivity)
@@ -93,8 +94,6 @@ class ResultActivity : AppCompatActivity() {
             adapter = newsAdapter
         }
 
-        binding.tvAnalisis.text = resources.getString(R.string.hasil_analisis, name, vit)
-        binding.tvManfaat.text = resources.getString(R.string.manfaat_buah)
         Glide.with(this).load(photo).into(binding.imageView2)
     }
 

@@ -77,7 +77,7 @@
     <string name="componen_buble_splash">Componen Bubble Splash</string>
     <string name="docbot_logo">DocBot Logo</string>
 
-    <string name="manfaat_buah">Buah ini baik untuk meningkatkan daya tahan tubuh</string>
+    <string name="manfaat_buah">Buah ini bermanfaat untuk %s</string>
     <string name="feedback_ask">Bagaimana pengalamanmu bersama DocBot ?</string>
     <string name="membantu">Membantu</string>
     <string name="biasa">Biasa saja</string>
