@@ -14,7 +14,28 @@ import java.util.*
 
 class CheckViewModel: ViewModel() {
 
-    fun getPuskesmas(): List<PuskesmasEntity> = DataDummy.generateDummyPuskesmas()
+    fun dummyNews(): List<NewsEntity> = DataDummy.generateDummyNews()
+
+    val listPuskesmas = MutableLiveData<ArrayList<PuskesmasEntity>>()
+    fun setPuskesmas(){
+        RetrofitInformation.create().getPuskesmas().enqueue(object : Callback<List<ListPuskesmas>> {
+            override fun onResponse(
+                    call: Call<List<ListPuskesmas>>,
+                    response: Response<List<ListPuskesmas>>
+            ) {
+                if (response.isSuccessful){
+                    listPuskesmas.postValue(response.body()?.get(0)?.article)
+                }
+            }
+
+            override fun onFailure(call: Call<List<ListPuskesmas>>, t: Throwable) {
+                Log.d("Failure", t.message.toString())
+            }
+
+        })
+    }
+
+    fun getPuskesmas(): LiveData<ArrayList<PuskesmasEntity>> = listPuskesmas
 
     val listNews = MutableLiveData<ArrayList<InformationEntity>>()
     fun getNews(): LiveData<ArrayList<InformationEntity>> = listNews

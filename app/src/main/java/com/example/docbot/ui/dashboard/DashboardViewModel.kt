@@ -13,10 +13,10 @@ import retrofit2.Response
 
 class DashboardViewModel: ViewModel() {
 
-    val listPuskesmas = MutableLiveData<ArrayList<PuskesmasEntity>>()
 
     fun getAsk() : List<String> = DataDummy.generateDummyAsk()
 
+    val listPuskesmas = MutableLiveData<ArrayList<PuskesmasEntity>>()
     fun setPuskesmas(){
         RetrofitInformation.create().getPuskesmas().enqueue(object : Callback<List<ListPuskesmas>> {
             override fun onResponse(
@@ -35,7 +35,5 @@ class DashboardViewModel: ViewModel() {
         })
     }
 
-    fun getNewsInformation(): LiveData<ArrayList<PuskesmasEntity>> = listPuskesmas
-
-    fun getPuskesmas(): List<PuskesmasEntity> = DataDummy.generateDummyPuskesmas()
+    fun getPuskesmas(): LiveData<ArrayList<PuskesmasEntity>> = listPuskesmas
 }

@@ -42,6 +42,8 @@
                     android:fontFamily="@font/nunito"
                     android:textSize="18sp"
                     android:textColor="@color/white"
+                    android:ellipsize="end"
+                    android:maxLines="2"
                     tools:text="@string/title"/>
 
             </LinearLayout>

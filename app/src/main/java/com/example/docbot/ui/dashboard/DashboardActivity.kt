@@ -76,7 +76,7 @@ class DashboardActivity : AppCompatActivity() {
         val puskesmasAdapter = PuskesmasAdapter()
         puskesmasAdapter.notifyDataSetChanged()
         viewModel.setPuskesmas()
-        viewModel.getNewsInformation().observe(this, {
+        viewModel.getPuskesmas().observe(this, {
             puskesmasAdapter.setPuskesmas(it)
             puskesmasAdapter.notifyDataSetChanged()
         })
