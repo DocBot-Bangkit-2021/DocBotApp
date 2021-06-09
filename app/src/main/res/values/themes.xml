@@ -19,6 +19,28 @@
         <item name="colorButtonNormal">@color/white</item>
     </style>
 
+    <!--  To Change Button that can't change the color  -->
+    <style name="Widget.App.WhiteButtonStyle"
+        parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/WhiteButtonThemeOverlay</item>
+    </style>
+
+    <style name="WhiteButtonThemeOverlay">
+        <item name="colorPrimary">@color/white</item>
+    </style>
+    <!--    -->
+
+    <!--  To Change Button that can't change the color  -->
+    <style name="Widget.App.GreenButtonStyle"
+        parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/GreenButtonThemeOverlay</item>
+    </style>
+
+    <style name="GreenButtonThemeOverlay">
+        <item name="colorPrimary">@color/blue_btn02</item>
+    </style>
+    <!--    -->
+
     <style name="Theme.DocBot.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
