@@ -142,6 +142,15 @@ Open Android Studio and select open an existing project.
 ### 3. Run Project in Android Studio
 Wait for Gradle Build to Finish and finally press the `Run > Run ‘app’`. Now the app has been installed in your phone / emulator. Make sure that you have configured your android device or emulator 
 
+## Resource
+* [Symptoms](https://www.flaticon.com/free-icon/symptoms_2779920)
+* [Corona](https://www.flaticon.com/free-icon/no-virus_2904253#)
+* [Vitamin](https://www.flaticon.com/free-icon/vitamin-c_2927436)
+* [Camera](https://www.flaticon.com/free-icon/photo_2983067?term=camera&page=1&position=35&page=1&position=35&related_id=2983067&origin=search)
+* [Add](https://www.flaticon.com/free-icon/add_1802755?related_id=1802755&origin=pack)
+* [Illustration 01](https://www.freepik.com/free-vector/flat-hand-drawn-patient-taking-medical-examination_12553933.htm#page=1&query=checkup%20health&position=5)
+* [Illustration 02](https://www.freepik.com/free-vector/group-medical-staff-carrying-health-related-icons_3226126.htm#page=1&query=health&position=3)
+* [Illustration 03](https://www.freepik.com/free-vector/online-doctor-concept_7915246.htm#page=1&query=health%20technology&position=25)
 
 ## References
 * [http://bit.ly/papercapstone01](http://bit.ly/papercapstone01)
