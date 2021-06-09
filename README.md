@@ -31,8 +31,8 @@ DocBot
 # DocBot-ML
 This project is our final project for Google Bangkit Academy 2021.
 
-**Android:**
-[DocBotApp](https://github.com/DocBot-Bangkit-2021/DocBotApp)
+**Machine Learning:**
+[DocBot-ML](https://github.com/DocBot-Bangkit-2021/DocBot-MachineLearningModels)
 
 **Cloud:**
 [DocBot-Cloud](https://github.com/DocBot-Bangkit-2021/DocBot-Cloud)
