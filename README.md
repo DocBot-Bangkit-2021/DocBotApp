@@ -25,8 +25,8 @@ DocBot
 * Deployment Application (C2242155 - Nurul Uswatun Hasanah)
 
 
-[![GitHub stars](https://img.shields.io/github/stars/DocBot-Bangkit-2021/DocBot-MachineLearningModels)](https://github.com/DocBot-Bangkit-2021/DocBot-MachineLearningModels)
-[![GitHub forks](https://img.shields.io/github/forks/DocBot-Bangkit-2021/DocBot-MachineLearningModels)](https://github.com/DocBot-Bangkit-2021/DocBot-MachineLearningModels)
+[![GitHub stars](https://img.shields.io/github/stars/DocBot-Bangkit-2021/DocBotApp)](https://github.com/DocBot-Bangkit-2021/DocBotApp)
+[![GitHub forks](https://img.shields.io/github/forks/DocBot-Bangkit-2021/DocBotApp)](https://github.com/DocBot-Bangkit-2021/DocBotApp)
 
 # DocBot-ML
 This project is our final project for Google Bangkit Academy 2021.
@@ -43,7 +43,9 @@ The development of the health sector in Indonesia is still not growing optimally
 
 **Machine Learning:** 
 
-Building three kinds of models that include [covid detection](https://github.com/DocBot-Bangkit-2021/DocBot-MachineLearningModels/tree/main/Covid-19), [fruit and vegetable nutrition content](https://github.com/DocBot-Bangkit-2021/DocBot-MachineLearningModels/tree/main/FruitsVegetables), and [general disease detection](https://github.com/DocBot-Bangkit-2021/DocBot-MachineLearningModels/tree/main/Disease). Build process using *baseline experiment, early stopping, checkpoint*. Pre-trained model or transfer learning by *resnet152v2, densenet121, inceptionv3, mobilenetv2, vgg19*. The model was saved with *model.tflite* and chosen by the [best model](https://github.com/DocBot-Bangkit-2021/DocBot-MachineLearningModels/tree/main/best%20model) for deployment.
+DocBotApp is used to interact with users in predicting disease symptoms through image or form input. By applying TFLite from Machine Learning results using CameraX and Local Files. Use of Retrofit in accessing APIs from the Cloud.
+
+Building three kinds of models that include [covid detection](https://github.com/DocBot-Bangkit-2021/DocBot-MachineLearningModels/tree/main/Covid-19), [fruit and vegetable nutrition content](https://github.com/DocBot-Bangkit-2021/DocBot-MachineLearningModels/tree/main/FruitsVegetables), and [general disease detection](https://github.com/DocBot-Bangkit-2021/DocBot-MachineLearningModels/tree/main/Disease).
 
 **Case :**
 
@@ -51,69 +53,71 @@ Building three kinds of models that include [covid detection](https://github.com
 - [x] Skin and Eye Diseases Classification
 - [x] Fruits and Vegetable Classification
 
-**Dataset Link:**
+## Screenshots
 
-* Covid19 
-  * [Early stage symptoms of COVID-19 patient's](https://www.kaggle.com/martuza/early-stage-symptoms-of-covid19-patients)
-* Fruits and Vegetables  → Combined Dataset : [FruitsVegetables](https://drive.google.com/file/d/1ruaStccmRUdgpxlI5lD2LDWH9nxoc9VY/view?usp=sharing)
-  * Crapping Image on Google Search (Manually)
-  * [Fruits-262](https://www.kaggle.com/aelchimminut/fruits262)
-  * [Fresh and Stale Images of Fruits and Vegetables](https://www.kaggle.com/raghavrpotdar/fresh-and-stale-images-of-fruits-and-vegetables)
-  * [Tomato Cultivars](https://www.kaggle.com/olgabelitskaya/tomato-cultivars)
-  * [Kaggle Fruits 360 dataset](https://www.kaggle.com/moltean/fruits)
-  * [Fruits & Vegetables](https://www.kaggle.com/jorgebailon/fruits-vegetables)
-  * [fruits_vegetables_photos](https://www.kaggle.com/balalexv/fruits-vegetables-photos)
+<p align="center">
+  <img src="/misc/img/01.jpg" width="210">
+  <img src="/misc/img/02.jpg" width="210">
+  <img src="/misc/img/03.jpg" width="210">
+</p>
 
-* Disease  → Combined Dataset : [Disease](https://drive.google.com/file/d/1ONPBCD-wRaZp8yY4EplIZImzrm3GYjnC/view?usp=sharing)
-  * Crapping Image on Google Search (Manually)
-  * [Dermnet](https://www.kaggle.com/shubhamgoel27/dermnet)
-  * [Various Skin Diseases Dataset](https://www.kaggle.com/akshitmadan/various-skin-diseases-dataset)
+<p align="center">
+  <img src="/misc/img/04.jpg" width="210">
+  <img src="/misc/img/05.jpg" width="210">
+  <img src="/misc/img/06.jpg" width="210">
+</p>
 
-Preview of the image and data used are shown in the picture below.
+<p align="center">
+  <img src="/misc/img/07.jpg" width="210">
+  <img src="/misc/img/08.jpg" width="210">
+  <img src="/misc/img/09.jpg" width="210">
+</p>
 
-<img align="center" src="/misc/img/covid.png"></img>
+<p align="center">
+  <img src="/misc/img/10.jpg" width="210">
+  <img src="/misc/img/11.jpg" width="210">
+</p>
 
-<p align="center">Early stage symptoms of COVID-19 patient's</p>
+<p align="center">
+  <img src="/misc/img/12.jpg" width="210">
+  <img src="/misc/img/13.jpg" width="210">
+</p>
 
-<img align="center" src="/misc/img/disease.png"></img>
+<p align="center">
+  <img src="/misc/img/14.jpg" width="210">
+  <img src="/misc/img/15.jpg" width="210">
+</p>
 
-<p align="center">Eye and Skin Disease</p>
+<p align="center">
+  <img src="/misc/img/16.jpg" width="210">
+</p>
 
-<img align="center" src="/misc/img/fruits.png"></img>
+## Development Roadmap
 
-<p align="center">Fruits and Vegetables</p>
-
+- [x] [Kotlin](https://kotlinlang.org/)
+- [x] [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
+- [x] [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
+- [x] [Room](https://developer.android.com/topic/libraries/architecture/room)
+- [x] [Coroutines](https://developer.android.com/topic/libraries/architecture/coroutines)
+- [x] Animations
+- [x] [Lottie Animation](https://lottiefiles.com/)
+  
 ## Features
 
-- [x] EDA (Exploratory Data Analysis) for Data Tables and Images
-- [x] Preprocessing Data and Image
-- [x] Image Augmentation
-- [x] Callbacks
-- [x] EarlyStopping
-- [x] ModelCheckpoint
-- [x] ResNet152V2
-- [x] DenseNet121
-- [x] InceptionV3
-- [x] MobileNetV2
-- [x] VGG19
-- [x] TFLite x labels 
+- [x] Intro Animations
+- [x] CRUD Item
+- [x] Item (Title, Desc, Tanggal dibuat, Tanggal Last Update, Tanggal Due Date, Mark as Complete)
+- [x] Sort by Create date and DueDate
+- [x] Search by Title and Content (Desc)
+- [x] Notifications
+- [x] Notifications 1 hour before
+- [x] Mark item as Done
 
 ## Prerequisites
-1. [Jupyter Notebook](https://test-jupyter.readthedocs.io/en/latest/install.html) or [Google Colab](https://colab.research.google.com/)
-2. Kaggle API Token → [Generate](https://github.com/Kaggle/kaggle-api#api-credentials)
-3. [Python](https://www.python.org/downloads/) version 3.6 or above
-4. Latest version of Tensorflow 2.5 (or you can update again by rerunning .ipynb and updating models)
+1. 
 
 ## How to use
-1. [Create `kaggle.json` from Kaggle](https://github.com/Kaggle/kaggle-api#api-credentials)
-2. Go to your Kaggle profile then download your Kaggle API.
-    - My Account  →  Look for API section  →  Create New API Token
-3. Open `.ipynb` with Google Colaboratory using `open in colab`
-4. "Save a copy in Drive" to run and edit with your account. Click `File` > `Save a copy in Drive` in your Google Colaboratory.
-5. Upload your `kaggle.json` if asked to upload it.
-6. Will download the dataset on kaggle
-7. If using GoogleDrive for the dataset, `GoogleAuth` click on the given link and sign in with your Google Account.
-8. Done :)
+1. 
 
 ## References
 * [http://bit.ly/papercapstone01](http://bit.ly/papercapstone01)
