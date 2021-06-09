@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.docbot.R
 import com.example.docbot.databinding.ActivityResultCvBinding
+import com.example.docbot.ui.cekgejala.CheckCameraActivity
 import com.example.docbot.ui.cekgejala.CheckViewModel
 import com.example.docbot.ui.dashboard.NewsAdapter
 import com.example.docbot.ui.dashboard.PuskesmasAdapter
@@ -19,6 +20,11 @@ class ResultCvActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResultCvBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Set action bar
+        supportActionBar?.elevation = 0f
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Covid19 Check Results"
 
         val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[CheckViewModel::class.java]
         val result = intent.getStringExtra(EXTRA_DATA)
@@ -60,6 +66,11 @@ class ResultCvActivity : AppCompatActivity() {
             adapter = puskesmasAdapter
         }
 
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
     companion object{

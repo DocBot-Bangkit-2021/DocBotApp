@@ -38,6 +38,12 @@ class ResultDiseasesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResultDiseasesBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Set action bar
+        supportActionBar?.elevation = 0f
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Disease Check Results"
+
         viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[CheckViewModel::class.java]
 
         name = intent.getStringExtra(EXTRA_NAME)
@@ -76,6 +82,11 @@ class ResultDiseasesActivity : AppCompatActivity() {
 
             } else Toast.makeText(this, "Ambil gambar dulu", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

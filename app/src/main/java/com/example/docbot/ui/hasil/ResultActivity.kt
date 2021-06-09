@@ -39,6 +39,11 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Set action bar
+        supportActionBar?.elevation = 0f
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "FruitsVegetables Check Results"
+
         viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[CheckViewModel::class.java]
 
         name = intent.getStringExtra(EXTRA_NAME)
@@ -75,6 +80,11 @@ class ResultActivity : AppCompatActivity() {
                 setData()
             } else Toast.makeText(this, "Ambil gambar dulu", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
     private fun setData(){
