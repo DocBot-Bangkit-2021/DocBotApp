@@ -4,5 +4,6 @@ data class InformationEntity(
     val id: Int,
     val name: String,
     val image: String,
-    val desc: String
+    val desc: String,
+    val link: String
 )

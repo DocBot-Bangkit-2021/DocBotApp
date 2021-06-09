@@ -35,7 +35,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
         fun bind(news: InformationEntity){
             with(binding){
                 tvTitleNews.text = news.name
-                tvDescriptionNews.text = "loremmmm"
+                tvDescriptionNews.text = news.desc
 
                 Glide.with(itemView.context)
                     .load(news.image)
@@ -43,7 +43,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, DetailInformationActivity::class.java)
-                    intent.putExtra(DetailInformationActivity.EXTRA_URL, news.desc)
+                    intent.putExtra(DetailInformationActivity.EXTRA_URL, news.link)
                     intent.putExtra(DetailInformationActivity.EXTRA_TITLE, news.name)
                     itemView.context.startActivity(intent)
                 }

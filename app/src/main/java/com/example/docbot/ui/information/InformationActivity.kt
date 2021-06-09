@@ -40,7 +40,7 @@ class InformationActivity : AppCompatActivity() {
         informationAdapter.setOnItemClickCallback(object : InformationAdapter.OnItemClickCallback{
             override fun onItemClicked(data: InformationEntity) {
                 val intent = Intent(this@InformationActivity, DetailInformationActivity::class.java)
-                intent.putExtra(DetailInformationActivity.EXTRA_URL, data.desc)
+                intent.putExtra(DetailInformationActivity.EXTRA_URL, data.link)
                 intent.putExtra(DetailInformationActivity.EXTRA_TITLE, data.name)
                 startActivity(intent)
             }
@@ -50,7 +50,7 @@ class InformationActivity : AppCompatActivity() {
         articleAdapter.setOnItemClickCallback(object : ArticleAdapter.OnItemClickCallback{
             override fun onItemClicked(data: InformationEntity) {
                 val intent = Intent(this@InformationActivity, DetailInformationActivity::class.java)
-                intent.putExtra(DetailInformationActivity.EXTRA_URL, data.desc)
+                intent.putExtra(DetailInformationActivity.EXTRA_URL, data.link)
                 intent.putExtra(DetailInformationActivity.EXTRA_TITLE, data.name)
                 startActivity(intent)
             }

@@ -36,6 +36,8 @@
                 android:layout_marginRight="12dp"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/nunito"
+                android:maxLines="1"
+                android:ellipsize="end"
                 tools:text="@string/title" />
 
             <TextView
