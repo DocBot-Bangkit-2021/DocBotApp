@@ -41,7 +41,7 @@ This project is our final project for Google Bangkit Academy 2021.
 
 The development of the health sector in Indonesia is still not growing optimally. Public submission of symptoms of disease requires early solutions in dealing with emerging diseases. As well as long-distance service in some areas is still very difficult. The government established an institution, namely Puskesmas, which is a health service facility. Public health problems, especially remote reports, recommendations for early treatment, and appropriate health programs for the community, are still lacking and not yet integrated. The strategy in the form of application development by utilizing deep learning aims to analyze the symptoms of the disease from the community in conducting classification based on disease diagnosis health test data. It is hoped that it can help people who need recommendations for first action against symptoms of disease and related health information, in addition to that expected from the data. which is received can be analyzed by the Puskesmas to design a health program.
 
-**Machine Learning:** 
+**Android:** 
 
 DocBotApp is used to interact with users in predicting disease symptoms through image or form input. By applying TFLite from Machine Learning results using CameraX and Local Files. Use of Retrofit in accessing APIs from the Cloud.
 
@@ -97,27 +97,49 @@ Building three kinds of models that include [covid detection](https://github.com
 - [x] [Kotlin](https://kotlinlang.org/)
 - [x] [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
 - [x] [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
-- [x] [Room](https://developer.android.com/topic/libraries/architecture/room)
-- [x] [Coroutines](https://developer.android.com/topic/libraries/architecture/coroutines)
-- [x] Animations
+- [x] TFLite 
+- [x] Retrofit
+- [x] Animations Build
 - [x] [Lottie Animation](https://lottiefiles.com/)
   
 ## Features
 
-- [x] Intro Animations
-- [x] CRUD Item
-- [x] Item (Title, Desc, Tanggal dibuat, Tanggal Last Update, Tanggal Due Date, Mark as Complete)
-- [x] Sort by Create date and DueDate
-- [x] Search by Title and Content (Desc)
-- [x] Notifications
-- [x] Notifications 1 hour before
-- [x] Mark item as Done
+- [x] SplashScreen
+- [x] Intro Apps & Animations
+- [x] Navigation Drawer
+- [x] Cek Gejala Umum
+- [x] Cek Gejala Covid
+- [x] Kandungan Buah dan Sayur
+- [x] TFLite Machine Learning
+- [x] CameraX
+- [x] Local File
+- [x] Health Info
+- [x] Articles
+- [X] About 
 
-## Prerequisites
-1. 
+## Requirement
+* Android Studio 4.2
+* Android Device or Android Emulator with minimum Lollipop Version
+* Emulator / External Device
+* USB Cable (to Connect Android Device to your Computer)
 
-## How to use
-1. 
+## Installation
+
+### 1. Clone this Project to your Computer
+```bash
+git clone https://github.com/DocBot-Bangkit-2021/DocBotApp.git
+```
+
+or you can use Android Studio 
+
+File > New > Project from Version Control ...
+
+### 2. Open the Project in your Android Studio
+Open Android Studio and select open an existing project.
+
+### 3. Run Project in Android Studio
+Wait for Gradle Build to Finish and finally press the `Run > Run ‘app’`. Now the app has been installed in your phone / emulator. Make sure that you have configured your android device or emulator 
+
 
 ## References
 * [http://bit.ly/papercapstone01](http://bit.ly/papercapstone01)
