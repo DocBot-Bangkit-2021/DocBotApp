@@ -56,10 +56,10 @@ Building three kinds of models that include [covid detection](https://github.com
 ## Screenshots
 
 <p align="center">
-  <img src="/misc/img/01.jpg" width="210">
-  <img src="/misc/img/02.jpg" width="210">
-  <img src="/misc/img/03.jpeg" width="210">
-  <img src="/misc/img/04.jpg" width="210">
+  <img src="/misc/img/01.jpg" width="200">
+  <img src="/misc/img/02.jpg" width="200">
+  <img src="/misc/img/03.jpeg" width="200">
+  <img src="/misc/img/04.jpg" width="200">
 </p>
 
 <p align="center">
