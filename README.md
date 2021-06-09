@@ -59,37 +59,38 @@ Building three kinds of models that include [covid detection](https://github.com
   <img src="/misc/img/01.jpg" width="210">
   <img src="/misc/img/02.jpg" width="210">
   <img src="/misc/img/03.jpg" width="210">
+  <img src="/misc/img/04.jpg" width="210">
 </p>
 
 <p align="center">
-  <img src="/misc/img/04.jpg" width="210">
   <img src="/misc/img/05.jpg" width="210">
   <img src="/misc/img/06.jpg" width="210">
+  <img src="/misc/img/07.jpg" width="210">
 </p>
 
 <p align="center">
-  <img src="/misc/img/07.jpg" width="210">
   <img src="/misc/img/08.jpg" width="210">
   <img src="/misc/img/09.jpg" width="210">
-</p>
-
-<p align="center">
   <img src="/misc/img/10.jpg" width="210">
+</p>
+
+<p align="center">
   <img src="/misc/img/11.jpg" width="210">
-</p>
-
-<p align="center">
   <img src="/misc/img/12.jpg" width="210">
+</p>
+
+<p align="center">
   <img src="/misc/img/13.jpg" width="210">
-</p>
-
-<p align="center">
   <img src="/misc/img/14.jpg" width="210">
-  <img src="/misc/img/15.jpg" width="210">
 </p>
 
 <p align="center">
+  <img src="/misc/img/15.jpg" width="210">
   <img src="/misc/img/16.jpg" width="210">
+</p>
+
+<p align="center">
+  <img src="/misc/img/17.jpg" width="210">
 </p>
 
 ## Development Roadmap
