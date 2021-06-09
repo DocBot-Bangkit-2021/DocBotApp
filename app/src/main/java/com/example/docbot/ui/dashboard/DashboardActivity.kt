@@ -27,7 +27,7 @@ class DashboardActivity : AppCompatActivity() {
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //Setting Toolbar
+        // Setting Toolbar
         setSupportActionBar(binding.toolbarMain)
         supportActionBar?.title = "DocBot"
         binding.toolbarMain.subtitle = "Health Symptom Check System"
@@ -56,7 +56,7 @@ class DashboardActivity : AppCompatActivity() {
             adapter = dashboardAdapter
         }
 
-        //news
+        // news
         val newsAdapter = NewsAdapter()
         newsAdapter.notifyDataSetChanged()
         val newsViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[InformationViewModel::class.java]

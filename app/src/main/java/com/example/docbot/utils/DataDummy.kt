@@ -8,11 +8,12 @@ object DataDummy {
     fun generateDummyAsk(): List<String>{
         val ask = ArrayList<String>()
 
-        ask.add("Tanya 1")
-        ask.add("Tanya 2")
-        ask.add("Tanya 3")
-        ask.add("Tanya 4")
-        ask.add("Tanya 5")
+        ask.add("Baik")
+        ask.add("Kurang Baik")
+        ask.add("Buruk")
+        ask.add("Beresiko")
+        ask.add("Butuh Penanganan")
+        ask.add("Tidak Pasti")
 
         return ask
     }
