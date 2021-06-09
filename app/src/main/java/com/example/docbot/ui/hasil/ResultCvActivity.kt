@@ -6,8 +6,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.docbot.R
 import com.example.docbot.databinding.ActivityResultCvBinding
+import com.example.docbot.ui.cekgejala.CheckCameraActivity
 import com.example.docbot.ui.cekgejala.CheckViewModel
+import com.example.docbot.ui.dashboard.NewsAdapter
 import com.example.docbot.ui.dashboard.PuskesmasAdapter
+import com.example.docbot.ui.information.InformationViewModel
 
 class ResultCvActivity : AppCompatActivity() {
 
@@ -17,6 +20,11 @@ class ResultCvActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResultCvBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Set action bar
+        supportActionBar?.elevation = 0f
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Covid19 Check Results"
 
         val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[CheckViewModel::class.java]
         val result = intent.getStringExtra(EXTRA_DATA)
@@ -30,9 +38,14 @@ class ResultCvActivity : AppCompatActivity() {
         }
 
         //artikel
-        val artikel = viewModel.getNews()
         val newsAdapter = ResultNewsAdapter()
-        newsAdapter.setNews(artikel.take(3))
+        newsAdapter.notifyDataSetChanged()
+        val newsViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[InformationViewModel::class.java]
+        newsViewModel.setNewsInformation()
+        newsViewModel.getNewsInformation().observe(this, {
+            newsAdapter.setNews(it.subList(2, 4))
+            newsAdapter.notifyDataSetChanged()
+        })
         with(binding.rvNewsRs){
             layoutManager = LinearLayoutManager(this@ResultCvActivity)
             setHasFixedSize(true)
@@ -40,15 +53,24 @@ class ResultCvActivity : AppCompatActivity() {
         }
 
         //puskesmas
-        val puskesmas = viewModel.getPuskesmas()
         val puskesmasAdapter = PuskesmasAdapter()
-        puskesmasAdapter.setPuskesmas(puskesmas)
+        puskesmasAdapter.notifyDataSetChanged()
+        viewModel.setPuskesmas()
+        viewModel.getPuskesmas().observe(this, {
+            puskesmasAdapter.setPuskesmas(it)
+            puskesmasAdapter.notifyDataSetChanged()
+        })
         with(binding.rvPuskesmasRs){
             layoutManager = LinearLayoutManager(this@ResultCvActivity, LinearLayoutManager.VERTICAL, false)
             setHasFixedSize(true)
             adapter = puskesmasAdapter
         }
 
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
     companion object{

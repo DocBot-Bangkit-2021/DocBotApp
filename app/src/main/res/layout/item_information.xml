@@ -29,28 +29,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:gravity="bottom|start"
-            android:paddingStart="10dp">
+            android:paddingStart="10dp"
+            android:paddingBottom="16dp"
+            android:paddingEnd="0dp">
 
             <TextView
                 android:id="@+id/tv_title_information"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="serif"
+                android:fontFamily="@font/nunito"
                 android:textSize="18sp"
                 android:textColor="@color/white"
-                tools:text="title" />
-
-            <TextView
-                android:id="@+id/tv_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif"
-                android:textColor="@color/white"
-                android:textSize="12sp"
-                android:layout_marginBottom="8dp"
-                tools:text="date" />
+                tools:text="title"
+                android:maxLines="1"/>
 
         </LinearLayout>
 

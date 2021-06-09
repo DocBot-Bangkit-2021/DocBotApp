@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.docbot.data.InformationEntity
 import com.example.docbot.databinding.ItemArticleBinding
-import com.example.docbot.databinding.ItemInformationBinding
 
 class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
 
@@ -27,9 +26,8 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() 
         RecyclerView.ViewHolder(binding.root) {
         fun bind(items: InformationEntity) {
             binding.apply {
-                titleArticle.text = items.title
-                dateArticle.text = items.publishedAt
-                Glide.with(itemView).load(items.urlToImage).centerCrop().into(ivArticle)
+                titleArticle.text = items.name
+                Glide.with(itemView).load(items.image).centerCrop().into(ivArticle)
             }
 
             binding.root.setOnClickListener {

@@ -8,7 +8,7 @@ object RetrofitInformation {
     fun create(): Service {
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://newsapi.org/")
+            .baseUrl("https://asia-southeast2-light-maker-312601.cloudfunctions.net/")
             .build()
         return retrofit.create(Service::class.java)
     }

@@ -1,8 +1,9 @@
 package com.example.docbot.data
 
 data class InformationEntity(
-    val title: String,
-    val url: String,
-    val urlToImage: String,
-    val publishedAt: String
+    val id: Int,
+    val name: String,
+    val image: String,
+    val desc: String,
+    val link: String
 )

@@ -29,29 +29,27 @@ class ResultDiseasesActivity : AppCompatActivity() {
     private lateinit var bitmap: Bitmap
     private var statusPhoto = false
     private var photo : String? = null
-    private var name : String? = null
+    private var name : String = ""
     private var penanganan : String? = null
+
+    private lateinit var viewModel: CheckViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResultDiseasesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Set action bar
+        supportActionBar?.elevation = 0f
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Disease Check Results"
+
+        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[CheckViewModel::class.java]
+
         name = intent.getStringExtra(EXTRA_NAME)
         photo = intent.getStringExtra(EXTRA_IMAGE)
         penanganan = intent.getStringExtra(EXTRA_DATA)
         setData()
-
-        //dummy artikel
-        val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[CheckViewModel::class.java]
-        val artikel = viewModel.getNews()
-        val newsAdapter = ResultNewsAdapter()
-        newsAdapter.setNews(artikel.take(2))
-        with(binding.rvNewsRs){
-            layoutManager = LinearLayoutManager(this@ResultDiseasesActivity)
-            setHasFixedSize(true)
-            adapter = newsAdapter
-        }
 
         binding.btnAmbil.setOnClickListener {
             startActivityForResult(Intent(this, CameraActivity::class.java), CODE_CAMERA)
@@ -84,6 +82,11 @@ class ResultDiseasesActivity : AppCompatActivity() {
 
             } else Toast.makeText(this, "Ambil gambar dulu", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -147,6 +150,20 @@ class ResultDiseasesActivity : AppCompatActivity() {
     }
 
     private fun setData(){
+        val dsName = name
+        viewModel.setNews(dsName)
+        val newsAdapter = ResultNewsAdapter()
+        newsAdapter.notifyDataSetChanged()
+        viewModel.getNews().observe(this, {
+            newsAdapter.setNews(it)
+            newsAdapter.notifyDataSetChanged()
+        })
+        with(binding.rvNewsRs){
+            layoutManager = LinearLayoutManager(this@ResultDiseasesActivity)
+            setHasFixedSize(true)
+            adapter = newsAdapter
+        }
+
         binding.tvAnalisis.text = resources.getString(R.string.hasil_analisis_2, name)
         binding.tvPenanganan.text = resources.getString(R.string.pengananan, penanganan)
         Glide.with(this).load(photo).into(binding.imageView2)

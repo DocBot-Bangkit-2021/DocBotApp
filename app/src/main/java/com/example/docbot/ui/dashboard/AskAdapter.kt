@@ -36,7 +36,7 @@ class AskAdapter : RecyclerView.Adapter<AskAdapter.DashboardViewHolder>() {
             with(binding){
                 tvAsk.text = ask
                 itemView.setOnClickListener {
-                    Toast.makeText(itemView.context, "Kamu memilih $ask", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(itemView.context, "Anda dalam keadaan yang $ask", Toast.LENGTH_SHORT).show()
                 }
             }
         }

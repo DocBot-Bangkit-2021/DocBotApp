@@ -8,11 +8,12 @@ object DataDummy {
     fun generateDummyAsk(): List<String>{
         val ask = ArrayList<String>()
 
-        ask.add("Tanya 1")
-        ask.add("Tanya 2")
-        ask.add("Tanya 3")
-        ask.add("Tanya 4")
-        ask.add("Tanya 5")
+        ask.add("Baik")
+        ask.add("Kurang Baik")
+        ask.add("Buruk")
+        ask.add("Beresiko")
+        ask.add("Butuh Penanganan")
+        ask.add("Tidak Pasti")
 
         return ask
     }
@@ -53,18 +54,18 @@ object DataDummy {
         val puskesmas = ArrayList<PuskesmasEntity>()
 
         puskesmas.add(
-            PuskesmasEntity("Puskesmas Jati Negara",
-            "Jl. dimana mana hatiku suka ada puskesmas",
+            PuskesmasEntity(1,"Puskesmas Jati Negara",
+            "","Jl. dimana mana hatiku suka ada puskesmas",
             "08123456789")
         )
         puskesmas.add(
-            PuskesmasEntity("Puskesmas Jati Negara",
-                "Jl. dimana mana hatiku suka ada puskesmas",
+            PuskesmasEntity(2,"Puskesmas Jati Negara",
+                "","Jl. dimana mana hatiku suka ada puskesmas",
                 "08123456789")
         )
         puskesmas.add(
-            PuskesmasEntity("Puskesmas Jati Negara",
-                "Jl. dimana mana hatiku suka ada puskesmas",
+            PuskesmasEntity(3,"Puskesmas Jati Negara",
+                "", "Jl. dimana mana hatiku suka ada puskesmas",
                 "08123456789")
         )
         return puskesmas

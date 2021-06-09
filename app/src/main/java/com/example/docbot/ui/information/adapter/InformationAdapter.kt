@@ -26,9 +26,8 @@ class InformationAdapter : RecyclerView.Adapter<InformationAdapter.InformationVi
         RecyclerView.ViewHolder(binding.root) {
         fun bind(items: InformationEntity) {
             binding.apply {
-                tvTitleInformation.text = items.title
-                tvDate.text = items.publishedAt
-                Glide.with(itemView).load(items.urlToImage).centerCrop().into(ivImageInformation)
+                tvTitleInformation.text = items.name
+                Glide.with(itemView).load(items.image).centerCrop().into(ivImageInformation)
             }
             binding.root.setOnClickListener {
                 onItemClickCallback.onItemClicked(items)

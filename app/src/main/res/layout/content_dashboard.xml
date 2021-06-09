@@ -122,6 +122,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ll_btn" />
 
     <TextView
+        android:id="@+id/btn_to_infoActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"

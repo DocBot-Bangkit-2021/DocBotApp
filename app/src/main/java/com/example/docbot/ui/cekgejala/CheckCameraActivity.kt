@@ -81,7 +81,6 @@ class CheckCameraActivity : AppCompatActivity() {
                     val intent = Intent(this, ResultActivity::class.java)
                     intent.putExtra(ResultActivity.EXTRA_NAME, name)
                     intent.putExtra(ResultActivity.EXTRA_IMAGE, photo)
-                    intent.putExtra(ResultActivity.EXTRA_VIT, "vitamin C")
                     startActivity(intent)
                     finish()
                 }else if(check == "umum"){

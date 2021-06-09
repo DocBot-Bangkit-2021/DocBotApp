@@ -7,13 +7,17 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.docbot.R
 import com.example.docbot.databinding.ActivityResultBinding
 import com.example.docbot.ml.Fruitsvegetable02V5
 import com.example.docbot.ui.cekgejala.CameraActivity
 import com.example.docbot.ui.cekgejala.CheckCameraActivity
+import com.example.docbot.ui.cekgejala.CheckViewModel
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.nio.ByteBuffer
@@ -26,17 +30,24 @@ class ResultActivity : AppCompatActivity() {
     private lateinit var bitmap: Bitmap
     private var statusPhoto = false
     private var photo : String? = null
-    private var name : String? = null
-    private var vit : String? = null
+    private var name : String = ""
+
+    private lateinit var viewModel: CheckViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Set action bar
+        supportActionBar?.elevation = 0f
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "FruitsVegetables Check Results"
+
+        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[CheckViewModel::class.java]
+
         name = intent.getStringExtra(EXTRA_NAME)
         photo = intent.getStringExtra(EXTRA_IMAGE)
-        vit = intent.getStringExtra(EXTRA_VIT)
 
         setData()
 
@@ -71,9 +82,28 @@ class ResultActivity : AppCompatActivity() {
         }
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
+    }
+
     private fun setData(){
-        binding.tvAnalisis.text = resources.getString(R.string.hasil_analisis, name, vit)
-        binding.tvManfaat.text = resources.getString(R.string.manfaat_buah)
+        val dsName = name
+        viewModel.setArtikelFruit(dsName)
+        val newsAdapter = ResultNewsAdapter()
+        newsAdapter.notifyDataSetChanged()
+        viewModel.getFruits().observe(this, {
+            newsAdapter.setNews(it.article)
+            newsAdapter.notifyDataSetChanged()
+            binding.tvAnalisis.text = resources.getString(R.string.hasil_analisis, name.trim(), it.vitamin)
+            binding.tvManfaat.text = resources.getString(R.string.manfaat_buah, it.benefits)
+        })
+        with(binding.rvNewsRs){
+            layoutManager = LinearLayoutManager(this@ResultActivity)
+            setHasFixedSize(true)
+            adapter = newsAdapter
+        }
+
         Glide.with(this).load(photo).into(binding.imageView2)
     }
 

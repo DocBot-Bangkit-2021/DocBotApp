@@ -21,7 +21,7 @@ class PuskesmasAdapter: RecyclerView.Adapter<PuskesmasAdapter.ViewHolder>() {
             with(binding){
                 tvTitle.text = data.name
                 tvAddress.text = data.address
-                tvPhone.text = data.phone
+                tvPhone.text = data.contact
             }
         }
     }

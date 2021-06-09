@@ -1,10 +1,19 @@
 package com.example.docbot.ui.information.network
 
-import com.example.docbot.data.ListInformation
+import com.example.docbot.data.*
 import retrofit2.Call
 import retrofit2.http.GET
 
 interface Service {
-    @GET("v2/top-headlines?country=id&apiKey=22b645b7cb554e2cb89b3532aee31bd0")
-    fun getAllInformation(): Call<ListInformation>
+    @GET("covidinfo")
+    fun getCovidInfo(): Call<ListInformation>
+
+    @GET("unit_kesehatan")
+    fun getPuskesmas(): Call<List<ListPuskesmas>>
+
+    @GET("disease_info")
+    fun getDisease(): Call<List<ListResult>>
+
+    @GET("fruitvege_info")
+    fun getFruit(): Call<List<ListFruits>>
 }

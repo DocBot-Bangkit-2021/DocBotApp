@@ -1,18 +1,12 @@
 package com.example.docbot.ui.dashboard
 
-import android.app.SearchManager
-import android.content.Context
 import android.content.Intent
-import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.EditText
-import android.widget.ImageView
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.widget.SearchView
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,6 +16,7 @@ import com.example.docbot.ui.about.AboutActivity
 import com.example.docbot.ui.cekgejala.CheckActivity
 import com.example.docbot.ui.cekgejala.CheckCameraActivity
 import com.example.docbot.ui.information.InformationActivity
+import com.example.docbot.ui.information.InformationViewModel
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -32,7 +27,7 @@ class DashboardActivity : AppCompatActivity() {
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //Setting Toolbar
+        // Setting Toolbar
         setSupportActionBar(binding.toolbarMain)
         supportActionBar?.title = "DocBot"
         binding.toolbarMain.subtitle = "Health Symptom Check System"
@@ -61,9 +56,16 @@ class DashboardActivity : AppCompatActivity() {
             adapter = dashboardAdapter
         }
 
-        val news = viewModel.getNews()
+        // news
         val newsAdapter = NewsAdapter()
-        newsAdapter.setNews(news)
+        newsAdapter.notifyDataSetChanged()
+        val newsViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[InformationViewModel::class.java]
+        newsViewModel.setNewsInformation()
+        newsViewModel.getNewsInformation().observe(this, {
+            newsAdapter.setNews(it.subList(0, 3))
+            newsAdapter.notifyDataSetChanged()
+        })
+
 
         with(binding.contentDashboard.rvNews){
             layoutManager = LinearLayoutManager(this@DashboardActivity, LinearLayoutManager.HORIZONTAL, false)
@@ -71,9 +73,13 @@ class DashboardActivity : AppCompatActivity() {
             adapter = newsAdapter
         }
 
-        val puskesmas = viewModel.getPuskesmas()
         val puskesmasAdapter = PuskesmasAdapter()
-        puskesmasAdapter.setPuskesmas(puskesmas)
+        puskesmasAdapter.notifyDataSetChanged()
+        viewModel.setPuskesmas()
+        viewModel.getPuskesmas().observe(this, {
+            puskesmasAdapter.setPuskesmas(it)
+            puskesmasAdapter.notifyDataSetChanged()
+        })
 
         with(binding.contentDashboard.rvPuskesmas){
             layoutManager = LinearLayoutManager(this@DashboardActivity, LinearLayoutManager.VERTICAL, false)
@@ -96,7 +102,8 @@ class DashboardActivity : AppCompatActivity() {
         binding.contentDashboard.buttonCv19.setOnClickListener {
             startActivity(Intent(this, CheckActivity::class.java))
         }
-        binding.tvToInfoActivity.setOnClickListener{
+
+        binding.contentDashboard.btnToInfoActivity.setOnClickListener {
             startActivity(Intent(this, InformationActivity::class.java))
         }
     }

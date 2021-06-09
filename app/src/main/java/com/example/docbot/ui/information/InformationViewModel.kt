@@ -16,13 +16,13 @@ class InformationViewModel: ViewModel() {
     val listInformation = MutableLiveData<ArrayList<InformationEntity>>()
 
     fun setNewsInformation(){
-        RetrofitInformation.create().getAllInformation().enqueue(object : Callback<ListInformation>{
+        RetrofitInformation.create().getCovidInfo().enqueue(object : Callback<ListInformation>{
             override fun onResponse(
                 call: Call<ListInformation>,
                 response: Response<ListInformation>
             ) {
                 if (response.isSuccessful){
-                    listInformation.postValue(response.body()?.articles)
+                    listInformation.postValue(response.body()?.article)
                 }
             }
 
